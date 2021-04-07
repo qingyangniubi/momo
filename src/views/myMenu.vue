@@ -2,8 +2,8 @@
   <!-- 首页 -->
   <el-container>
     <!-- 头部 -->
-    <el-header>
-      <div class="header-box">
+    <header>
+      <div class="header-box w1200">
         <el-row>
           <el-col :span="5">
             <img
@@ -13,7 +13,13 @@
             />
           </el-col>
           <el-col :span="19">
-            <el-menu mode="horizontal" class="nav" :router="true">
+            <el-menu
+              mode="horizontal"
+              class="nav"
+              active-text-color="#409EFF"
+              text-color="#333"
+              :router="true"
+            >
               <el-menu-item index="/index">首页</el-menu-item>
               <el-menu-item index="/about_us">关于我们</el-menu-item>
               <el-menu-item index="/model_shows">模特展示</el-menu-item>
@@ -27,11 +33,12 @@
                 ><img src="../assets/img/7877635_1538278040.png" alt="" />
                 <span>13688143752</span></el-menu-item
               >
+              <div class="line"></div>
             </el-menu>
           </el-col>
         </el-row>
       </div>
-    </el-header>
+    </header>
     <!-- 身体 -->
     <el-main>
       <router-view></router-view>
