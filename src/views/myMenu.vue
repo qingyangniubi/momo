@@ -19,7 +19,7 @@
               active-text-color="#409EFF"
               text-color="#333"
               :router="true"
-              default-active="/index"
+              :default-active="route"
             >
               <el-menu-item index="/index">首页</el-menu-item>
               <el-menu-item index="/about_us">关于我们</el-menu-item>
@@ -32,8 +32,8 @@
               >
               <el-menu-item class="li-tel"
                 ><img src="../assets/img/7877635_1538278040.png" alt="" />
-                <span>13688143752</span></el-menu-item
-              >
+                <span>13688143752 </span>
+              </el-menu-item>
               <div class="line"></div>
             </el-menu>
           </el-col>
@@ -79,7 +79,34 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      route: "",
+    };
+  },
+  created: function () {
+    this.route = location.hash.substring(1);
+    const url = "http://49.235.93.38:82/index.php/api/carousel_map/list";
+    axios
+      .get(url)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
+  watch: {
+    $route: "getPath",
+  },
+  methods: {
+    getPath() {
+      this.route = this.$route.path;
+    },
+  },
+};
 </script>
 
 <style scoped>

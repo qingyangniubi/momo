@@ -13,7 +13,11 @@
             <p>小包低消1080元 中包低消1280 大包低消1380 豪包低消2680</p>
           </div>
           <div class="j-code">
-            <img src="@/assets/img/image_2.png" alt="" />
+            <img
+              class="lazy"
+              data-original="../../assets/img/image_2.png"
+              alt=""
+            />
           </div>
           <div class="j-relation">
             <span>T：13688143752</span>
@@ -37,56 +41,80 @@
         <div class="j-private">
           <ul>
             <li>
-              <img src="@/assets/img/image_p1.jpg" alt="" />
+              <div class="j-magnify">
+                <img src="../../assets/img/image_p1.jpg" alt="" />
+              </div>
               <h3>成都夜总会环境</h3>
               <p>联系人：周经理</p>
               <p>手 机：13688143752（微信同号）</p>
               <p class="j-p10">地 址：成都</p>
               <div class="j-align">
                 <div class="j-align-left">
-                  <img src="@/assets/img/icon_1.png" alt="" />
+                  <img
+                    class="lazy"
+                    data-original="../../assets/img/icon_1.png"
+                    alt=""
+                  />
                   <span>：夜场模特</span>
                 </div>
                 <div class="j-align-right">
-                  <img src="@/assets/img/icon_2.png" alt="" /><span
-                    >：1203人</span
-                  >
+                  <img
+                    class="lazy"
+                    data-original="../../assets/img/icon_2.png"
+                    alt=""
+                  /><span>：1203人</span>
                 </div>
               </div>
             </li>
             <li>
-              <img src="@/assets/img/image_7.jpeg" alt="" />
+              <div class="j-magnify">
+                <img src="../../assets/img/image_7.jpeg" alt="" />
+              </div>
               <h3>成都夜场环境</h3>
               <p>联系人：周经理</p>
               <p>手 机：13688143752（微信同号）</p>
               <p class="j-p10">地 址：成都</p>
               <div class="j-align">
                 <div class="j-align-left">
-                  <img src="@/assets/img/icon_1.png" alt="" />
+                  <img
+                    class="lazy"
+                    data-original="../../assets/img/icon_1.png"
+                    alt=""
+                  />
                   <span>：夜场模特</span>
                 </div>
                 <div class="j-align-right">
-                  <img src="@/assets/img/icon_2.png" alt="" /><span
-                    >：1203人</span
-                  >
+                  <img
+                    class="lazy"
+                    data-original="../../assets/img/icon_2.png"
+                    alt=""
+                  /><span>：1203人</span>
                 </div>
               </div>
             </li>
             <li>
-              <img src="@/assets/img/image_p2.jpeg" alt="" />
+              <div class="j-magnify">
+                <img src="../../assets/img/image_p2.jpeg" alt="" />
+              </div>
               <h3>成都酒吧环境</h3>
               <p>联系人：周经理</p>
               <p>手 机：13688143752（微信同号）</p>
               <p class="j-p10">地 址：成都</p>
               <div class="j-align">
                 <div class="j-align-left">
-                  <img src="@/assets/img/icon_1.png" alt="" />
+                  <img
+                    class="lazy"
+                    data-original="../../assets/img/icon_1.png"
+                    alt=""
+                  />
                   <span>：夜场模特</span>
                 </div>
                 <div class="j-align-right">
-                  <img src="@/assets/img/icon_2.png" alt="" /><span
-                    >：1203人</span
-                  >
+                  <img
+                    class="lazy"
+                    data-original="../../assets/img/icon_2.png"
+                    alt=""
+                  /><span>：1203人</span>
                 </div>
               </div>
             </li>
@@ -126,29 +154,53 @@
         <div class="j-inner">
           <ul>
             <li>
-              <img src="@/assets/img/bell_1.jpg" alt="" />
+              <img
+                class="lazy"
+                data-original="../../assets/img/bell_1.jpg"
+                alt=""
+              />
               <p>成都夜总会模特</p>
             </li>
             <li>
-              <img src="@/assets/img/belle_2.jpg" alt="" />
+              <img
+                class="lazy"
+                data-original="../../assets/img/belle_2.jpg"
+                alt=""
+              />
               <p>成都夜场模特</p>
             </li>
             <li>
-              <img src="@/assets/img/belle_3.jpg" alt="" />
+              <img
+                class="lazy"
+                data-original="../../assets/img/belle_3.jpg"
+                alt=""
+              />
               <p>成都酒吧模特</p>
             </li>
           </ul>
           <ul>
             <li>
-              <img src="@/assets/img/belle_4.jpg" alt="" />
+              <img
+                class="lazy"
+                data-original="../../assets/img/belle_4.jpg"
+                alt=""
+              />
               <p>成都夜总会模特</p>
             </li>
             <li>
-              <img src="@/assets/img/belle_5.jpg" alt="" />
+              <img
+                class="lazy"
+                data-original="../../assets/img/belle_5.jpg"
+                alt=""
+              />
               <p>成都夜场模特</p>
             </li>
             <li>
-              <img src="@/assets/img/belle_6.jpg" alt="" />
+              <img
+                class="lazy"
+                data-original="../../assets/img/belle_6.jpg"
+                alt=""
+              />
               <p>成都酒吧模特</p>
             </li>
           </ul>
@@ -165,11 +217,93 @@
           <p>T E A C H E R</p>
           <div class="j-hr"></div>
         </div>
+        <div class="j-play-item">
+          <div class="j-img-left">
+            <img
+              class="lazy"
+              data-original="../../assets/img/image-110.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="j-right">
+            <div class="j-right-1 j-shift">
+              <div class="j-divs">
+                <i></i>
+                <h3>夜场招聘男士面试要求怎么和领班相处</h3>
+                <p>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网络简历其实和纸质简历差别不大，在写网络简历的时候，也应<br />当要引起重视，如今是一个网络信息时代，因此网络简历也是被很多<br />HR看好的，那么一份优秀网络简历的标准是
+                </p>
+              </div>
+              <span>2018-08-23</span>
+            </div>
+            <div class="j-right-1 j-great">
+              <div class="j-doraem">
+                <div class="j-image-play">
+                  <img
+                    class="lazy"
+                    data-original="../../assets/img/img-1.png"
+                    alt=""
+                  />
+                </div>
+                <div class="j-divs j-model">
+                  <i></i>
+                  <h3>夜总会招聘模特条件改掉这些习惯</h3>
+                  <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;夜总会模特丰厚的薪资，总会吸引着无数青春<br />靓的女孩前来应聘，当然，这些青春靓丽的女孩儿<br />在应聘之前，心中也会有一丝忧虑，总担心自己无<br />法胜任这份工作，无法应聘成功
+                  </p>
+                </div>
+              </div>
+              <span>2018-08-23</span>
+            </div>
+            <div class="j-right-1 j-great">
+              <div class="j-doraem">
+                <div class="j-image-play">
+                  <img
+                    class="lazy"
+                    data-original="../../assets/img/img-1.png"
+                    alt=""
+                  />
+                </div>
+                <div class="j-divs j-model">
+                  <i></i>
+                  <h3>夜场模特说话技巧如何打动面试官</h3>
+                  <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;夜场是很多女孩儿的梦想摇篮，女孩的很多梦想<br />都可以在这个摇篮中实现，所以越来越多的女孩<br />都想在夜场工作，毕竟在这里可以赚取她们想要的<br />工资，这里可以让她们过上，她
+                  </p>
+                </div>
+              </div>
+              <span>2018-08-23</span>
+            </div>
+            <div class="j-right-1 j-great">
+              <div class="j-doraem">
+                <div class="j-image-play j-img-bottom">
+                  <img
+                    class="lazy"
+                    data-original="../../assets/img/img-2.png"
+                    alt=""
+                  />
+                </div>
+                <div class="j-divs j-model">
+                  <i></i>
+                  <h3>夜场招聘找不到工作原因不同类型面试</h3>
+                  <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之所以现在有很多应届毕业生他们会找不到工<br />作，主要是因为他们不知道到底是哪一些原因促成<br />大学生就业难，所以没有办法针对性，结合自我的<br />实际情况去调整，那么，大学生
+                  </p>
+                </div>
+              </div>
+              <span>2018-08-23</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- 新闻资讯  end-->
   </div>
 </template>
+
+<script>
+// import "@/assets/js/index";
+</script>
 
 <style scoped>
 @import "../../assets/css/index.css";

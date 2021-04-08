@@ -111,6 +111,11 @@ li {
     text-align: center;
     color: #fff;
     font-size: 16px;
+    cursor: pointer;
+}
+
+.j-relation:hover {
+    background-color: #c9302c;
 }
 
 .j-cur span {
@@ -139,7 +144,7 @@ li {
     color: #000;
     text-align: center;
     font-weight: 700;
-    margin: 75px 0 34px 0;
+    margin: 150px 0 34px 0;
 }
 
 .j-top p {
@@ -149,8 +154,40 @@ li {
 .j-top .j-hr {
     width: 36px;
     height: 14px;
-    margin: 22px auto 87px;
+    margin: 0 auto;
+    margin-top: 22px;
+    margin-bottom: 200px;
     border-top: rgb(60, 181, 213) 2px solid;
+}
+
+.j-top {
+    animation: move 0.5s linear forwards;
+}
+
+@keyframes move {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-100px);
+    }
+}
+
+.j-private {
+    animation: box 0.8s linear forwards;
+}
+
+@keyframes box {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-200px);
+    }
 }
 
 .j-private ul {
@@ -173,6 +210,20 @@ li {
     padding: 20px 0 30px 0;
     font-size: 18px;
     font-family: "微软雅黑";
+}
+
+.j-magnify {
+    overflow: hidden;
+}
+
+.j-magnify img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease;
+}
+
+.j-magnify:hover img {
+    transform: scale(1.1);
 }
 
 .j-private .j-align .j-align-left img {
@@ -217,7 +268,7 @@ li {
     text-align: center;
     color: #fff;
     margin: 0 auto;
-    margin-top: 79px;
+    margin-top: -79px;
     margin-bottom: 121px;
 }
 
@@ -238,7 +289,7 @@ li {
     height: 768px;
     background: url("../img/banner-1.jpg") fixed center top;
     background-size: 100%;
-    margin-bottom: 71px;
+    margin-bottom: 105px;
 }
 
 .j-about {
@@ -256,13 +307,25 @@ li {
     color: #fff;
 }
 
+@keyframes about {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+}
+
 .j-row_11 .j-about-p {
-    margin-top: 37px;
+    margin-top: 72px;
+    animation: about 0.7s linear forwards;
 }
 
 .j-row_11 h2 {
     font-size: 42px;
-    margin: 68px 0 82px 0;
+    margin: 32px 0 82px 0;
 }
 
 .j-row_11 .p-play {
@@ -291,12 +354,25 @@ li {
 
 .j-trademark {
     text-align: center;
+    animation: trademark 0.5s linear forwards;
+}
+
+@keyframes trademark {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50px);
+    }
 }
 
 .j-blur .j-hr {
     width: 36px;
     height: 14px;
-    margin: 22px auto 60px;
+    margin: 0 auto;
+    margin-top: 22px;
     border-top: rgb(60, 181, 213) 2px solid;
 }
 
@@ -311,6 +387,11 @@ li {
     font-weight: 700;
     text-align: center;
     margin-top: 5px;
+    cursor: pointer;
+}
+
+.j-inner p:hover {
+    color: #2090FF;
 }
 
 .j-inner li {
@@ -338,6 +419,21 @@ li {
 }
 
 .j-journalism-title {
+    animation: title 0.5s linear forwards;
+}
+
+@keyframes title {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50px);
+    }
+}
+
+.j-journalism-title p {
     text-align: center;
 }
 
@@ -346,6 +442,7 @@ li {
     font-family: "微软雅黑";
     font-size: 32px;
     color: #333333;
+    text-align: center;
 }
 
 .j-journalism-title p {
@@ -358,8 +455,103 @@ li {
 .j-journalism-title .j-hr {
     width: 36px;
     height: 14px;
-    margin: 22px auto 60px;
+    margin: 0 auto;
+    margin-top: 22px;
+    padding-bottom: 10px;
     border-top: rgb(60, 181, 213) 2px solid;
+}
+
+.j-img-left {
+    margin-right: 93px;
+}
+
+.j-shift {
+    margin-left: 20px;
+}
+
+.j-img-left img {
+    width: 433px;
+    height: 480px;
+}
+
+.j-play-item {
+    position: relative;
+    display: flex;
+}
+
+.j-right {
+    width: 624px;
+    display: flex;
+    flex-direction: column;
+}
+
+.j-right-1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.j-right i {
+    position: absolute;
+    top: 9px;
+    left: -20px;
+    width: 8px;
+    height: 8px;
+    background-color: #3CB5D5;
+    border-radius: 50%;
+}
+
+.j-play-item h3 {
+    color: rgb(102, 102, 102);
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.j-right p {
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: rgb(152, 152, 152);
+    line-height: 23px;
+}
+
+.j-right span {
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #989898;
+    margin-top: 25px;
+}
+
+.j-right .j-divs {
+    position: relative;
+}
+
+.j-model {
+    margin-left: 40px;
+}
+
+.j-doraem {
+    display: flex;
+}
+
+.j-image-play img {
+    margin-top: 3px;
+}
+
+.j-img-bottom img {
+    margin-top: 10px;
+}
+
+.j-image-play {
+    width: 100px;
+    height: 80px;
+    border: 1px solid #ccc;
+}
+
+.j-image-play:hover {
+    border: 1px solid #3B5FCB;
+    transition-duration: .5s;
+    transition-timing-function: ease;
 }
 
 
