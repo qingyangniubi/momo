@@ -14,8 +14,8 @@
       <div class="regard-center w1200">
         <!-- 左侧边栏 -->
         <div class="regard-left">
-          <ul class="list">
-            <li class="point">
+          <ul class="list animate__animated animate__bounce animate__backInUp">
+            <li class="point ">
               <router-link to="/about_us">关于我们</router-link>
             </li>
             <li>
@@ -25,7 +25,7 @@
               <router-link to="/recruitment_requirements">招聘要求</router-link>
             </li>
           </ul>
-          <div class="box">
+          <div class="box animate__animated  animate__backInRight">
             <div id="items" class="items-top">
               <h1>关于我们</h1>
               <div>
@@ -128,11 +128,9 @@
     </div>
   </div>
 </template>
-<style>
-/*清除元素默认的内外边距  */
-
-/*让所有斜体 不倾斜*/
-
+<style scoped>
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css";
+/*清除元素默认的内外边距  */ /*让所有斜体 不倾斜*/
 em,
 i {
   font-style: normal;
@@ -395,3 +393,6 @@ textarea {
 
 /* 关于我们 结束*/
 </style>
+<script>
+export default {};
+</script>
