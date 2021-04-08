@@ -1,0 +1,366 @@
+/* 初始化 */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.clearfix:after {
+    /*伪元素是行内元素 正常浏览器清除浮动方法*/
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    *zoom: 1;
+    /*ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行*/
+}
+
+body {
+    background: #F3F3F3;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+.w1200 {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* banner start */
+
+.j-banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.j-banner-image {
+    width: 100%;
+    height: 600px;
+    background: url("../img/image-10.jpg") no-repeat;
+    background-size: 100%;
+}
+
+.j-product {
+    position: absolute;
+    width: 803px;
+    background-color: rgba(102, 0, 0, .7);
+    top: 130px;
+    left: 552px;
+}
+
+.j-product h3 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 35px;
+    padding: 42px 0 24px 0;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: "幼圆";
+    z-index: 7;
+}
+
+.j-product p {
+    text-align: center;
+    color: #FBF900;
+    padding-bottom: 29px;
+    font-size: 20px;
+    font-family: "幼圆";
+    font-weight: 400;
+}
+
+.j-code {
+    position: absolute;
+    top: 353px;
+    left: 46.5%;
+}
+
+.j-relation {
+    position: absolute;
+    top: 499px;
+    left: 46.5%;
+    width: 135px;
+    height: 45px;
+    background-color: #D9534F;
+}
+
+.j-relation span {
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+.j-cur span {
+    position: absolute;
+    bottom: 15px;
+    left: 49.5%;
+    display: block;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.j-span {
+    cursor: pointer;
+}
+
+
+/* banner end */
+
+
+/* ENVIRONMENTAL DISPLAY start */
+
+.j-top h1 {
+    font-size: 36px;
+    color: #000;
+    text-align: center;
+    font-weight: 700;
+    margin: 75px 0 34px 0;
+}
+
+.j-top p {
+    text-align: center;
+}
+
+.j-top .j-hr {
+    width: 36px;
+    height: 14px;
+    margin: 22px auto 87px;
+    border-top: rgb(60, 181, 213) 2px solid;
+}
+
+.j-private ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.j-private li {
+    background-color: #fff;
+    text-align: center;
+}
+
+.j-private img {
+    width: 380px;
+    height: 220px;
+}
+
+.j-private ul li h3 {
+    color: #666666;
+    padding: 20px 0 30px 0;
+    font-size: 18px;
+    font-family: "微软雅黑";
+}
+
+.j-private .j-align .j-align-left img {
+    width: 20px;
+    height: 16px;
+}
+
+.j-private .j-align .j-align-right img {
+    width: 19px;
+    height: 19px;
+}
+
+.j-private ul li p {
+    color: #989898;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    line-height: 25px;
+}
+
+.j-private ul li .j-p10 {
+    padding-bottom: 30px;
+}
+
+.j-align {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 32px;
+}
+
+.j-align span {
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #555;
+}
+
+.j-examine {
+    width: 146px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #3CB5D5;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 79px;
+    margin-bottom: 121px;
+}
+
+.j-examine a {
+    font: normal 700 16px '微软雅黑';
+    color: #fff;
+}
+
+
+/* ENVIRONMENTAL DISPLAY start end */
+
+
+/* 锦缘国际夜总会 start */
+
+.j-international {
+    position: relative;
+    width: 100%;
+    height: 768px;
+    background: url("../img/banner-1.jpg") fixed center top;
+    background-size: 100%;
+    margin-bottom: 71px;
+}
+
+.j-about {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1200px;
+    height: 566px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .3);
+}
+
+.j-row_11 {
+    text-align: center;
+    color: #fff;
+}
+
+.j-row_11 .j-about-p {
+    margin-top: 37px;
+}
+
+.j-row_11 h2 {
+    font-size: 42px;
+    margin: 68px 0 82px 0;
+}
+
+.j-row_11 .p-play {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.j-row_11 a {
+    display: inline-block;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 90px;
+    margin-top: 114px;
+    cursor: pointer;
+}
+
+
+/* 锦缘国际夜总会 end */
+
+
+/* 模特部分 start */
+
+.j-blur {
+    padding-bottom: 95px;
+}
+
+.j-trademark {
+    text-align: center;
+}
+
+.j-blur .j-hr {
+    width: 36px;
+    height: 14px;
+    margin: 22px auto 60px;
+    border-top: rgb(60, 181, 213) 2px solid;
+}
+
+.j-inner {
+    background-color: #fff;
+    padding-bottom: 60px;
+}
+
+.j-inner p {
+    color: #444;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.j-inner li {
+    padding-top: 12px;
+}
+
+.j-inner ul {
+    display: flex;
+    justify-content: center;
+}
+
+.j-inner ul li:nth-of-type(2) {
+    margin: 0 97px;
+}
+
+
+/* 模特部分 end */
+
+
+/* 新闻资讯 stert */
+
+.j-journalism {
+    width: 100%;
+    background-color: #fff;
+}
+
+.j-journalism-title {
+    text-align: center;
+}
+
+.j-journalism-title h2 {
+    padding-top: 114px;
+    font-family: "微软雅黑";
+    font-size: 32px;
+    color: #333333;
+}
+
+.j-journalism-title p {
+    color: #989898;
+    font-family: SimSun;
+    font-size: 18px;
+    padding-top: 11px;
+}
+
+.j-journalism-title .j-hr {
+    width: 36px;
+    height: 14px;
+    margin: 22px auto 60px;
+    border-top: rgb(60, 181, 213) 2px solid;
+}
+
+
+/* 新闻资讯 end */

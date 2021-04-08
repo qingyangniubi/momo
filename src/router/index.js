@@ -4,7 +4,7 @@ import MyMenu from '../views/myMenu.vue';
 
 
 Vue.use(VueRouter)
-import main from './qq_main';
+import main from './main';
 const routes = [{
   path: '/',
   component: MyMenu,
