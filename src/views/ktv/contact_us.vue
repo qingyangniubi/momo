@@ -292,7 +292,9 @@ textarea {
 .regard-left {
   display: flex;
 }
-
+.regard-left .list li {
+  background-color: #ebebeb;
+}
 .regard-left a {
   margin-top: 20px;
   font-family: 微软雅黑;
