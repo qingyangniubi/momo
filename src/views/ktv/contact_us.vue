@@ -1,19 +1,4 @@
-<script>
-var lis = document.querySelectorAll(".regard-left li");
-var box = document.querySelectorAll(".box #items");
-for (var i = 0; i < lis.length; i++) {
-  lis[i].setAttribute("index", i);
-  lis[i].onclick = function() {
-    for (var j = 0; j < lis.length; j++) {
-      lis[j].className = "";
-      box[j].style.display = "none";
-    }
-    this.className = "point";
-    console.log(this);
-    box[this.getAttribute("index")].style.display = "block";
-  };
-}
-</script>
+
 <template>
   <!-- 关于我们 -->
   <div>
@@ -32,25 +17,25 @@ for (var i = 0; i < lis.length; i++) {
         <div class="regard-left">
           <ul class="list">
             <li>
-              <a href="javascript:;">关于我们</a>
+              <router-link to="/about_us">关于我们</router-link>
             </li>
             <li class="point">
-              <a href="javascript:;">联系我们</a>
+              <router-link to="/contact_us">联系我们</router-link>
             </li>
             <li>
-              <a href="javascript:;">招聘要求</a>
+              <a
+                href="javascript:;"
+                @click="$router.push('/recruitment_requirements')"
+                >招聘要求</a
+              >
             </li>
           </ul>
           <div class="box">
             <div id="items" class="items-center">
               <h1>联系我们</h1>
-              <p>
-                成都夜总会，成都夜场，成都酒吧各种模特佳丽【13688143752】，
-              </p>
+              <p>成都夜总会，成都夜场，成都酒吧各种模特佳丽【13688143752】，</p>
               <p>设备齐全，装修高端，资源丰富</p>
-              <p>
-                生意每天开到爆，欢迎随时预定包厢
-              </p>
+              <p>生意每天开到爆，欢迎随时预定包厢</p>
               <img src="../../assets/img/patrick.png" alt="" />
             </div>
             <div id="items" class="items-top">
@@ -88,22 +73,14 @@ for (var i = 0; i < lis.length; i++) {
                 </p>
               </div>
               <div class="commitment">
-                <p>
-                  郑重承诺：
-                </p>
+                <p>郑重承诺：</p>
                 <p>
                   1、无押金，无任何费用，不抽水，无台费，公司直聘，绝非中介。
                 </p>
 
-                <p>
-                  2、无需办理IC卡，无需身份证。
-                </p>
-                <p>
-                  3、不需要穿工服，怎么怎么穿，展现自己最美丽时尚的一面。
-                </p>
-                <p>
-                  4、保证这份工作绝对是健康、安全、正规、合法的。
-                </p>
+                <p>2、无需办理IC卡，无需身份证。</p>
+                <p>3、不需要穿工服，怎么怎么穿，展现自己最美丽时尚的一面。</p>
+                <p>4、保证这份工作绝对是健康、安全、正规、合法的。</p>
               </div>
             </div>
 
@@ -117,15 +94,9 @@ for (var i = 0; i < lis.length; i++) {
               <p>
                 欢迎自信的你加入本团队，这是属于你们的团队，我们将带领你成为有钱的女人。
               </p>
-              <p class="blank">
-                微信号码：13688143752 欢迎加微信咨询
-              </p>
-              <p class="blank">
-                招聘职位：夜场模特佳丽一招聘范围:成都模特招聘
-              </p>
-              <p>
-                招聘年龄:18-26周岁之间
-              </p>
+              <p class="blank">微信号码：13688143752 欢迎加微信咨询</p>
+              <p class="blank">招聘职位：夜场模特佳丽一招聘范围:成都模特招聘</p>
+              <p>招聘年龄:18-26周岁之间</p>
               <p class="blank">
                 招聘形象:女,净身高163cm即可，形象好,气质佳，会打扮自己。
               </p>
@@ -136,9 +107,7 @@ for (var i = 0; i < lis.length; i++) {
               <p>
                 工作经验:工作经验不限，只要你形象优秀，上进心强，我们的团队就会欢迎你!对于没有夜场工作经验的我们进行详细耐心的培
               </p>
-              <p>
-                训，一直到你完全掌握!
-              </p>
+              <p>训，一直到你完全掌握!</p>
               <p class="blank">模特公关部《应聘须知》</p>
               <p class="blank">1.无任何费用，无押金，无工服，当天安排上班。</p>
               <p class="blank">

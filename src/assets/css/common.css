@@ -48,7 +48,7 @@ header {
     margin-right: 10px;
 }
 
-.header-box .el-col-19 .nav li:hover {
+.header-box .el-col-19 .nav li:nth-child(-n+7):hover {
     color: #409EFF !important;
     border-bottom: 2px solid #409EFF !important;
 }
@@ -60,6 +60,10 @@ header {
     justify-content: flex-end;
 }
 
+.li-tel img {
+    width: 22px;
+    height: 22px;
+}
 
 /* .el-menu.el-menu--horizontal  */
 
