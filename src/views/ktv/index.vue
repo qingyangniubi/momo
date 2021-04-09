@@ -4,6 +4,11 @@
     <!-- banner start -->
     <div class="j-banner">
       <div class="j-banner-image">
+        <img
+          :src="$store.state.imagePath + bgImgArr[0].image"
+          alt=""
+          class="j-b-i"
+        />
         <div class="j-introduce w1200">
           <div class="j-product">
             <h3>
@@ -13,11 +18,7 @@
             <p>小包低消1080元 中包低消1280 大包低消1380 豪包低消2680</p>
           </div>
           <div class="j-code">
-            <img
-              class="lazy"
-              data-original="../../assets/img/image_2.png"
-              alt=""
-            />
+            <img v-lazy="require('../../assets/img/image_2.png')" alt="" />
           </div>
           <div class="j-relation">
             <span>T：13688143752</span>
@@ -38,7 +39,7 @@
           <p>环境/AMBIENT</p>
           <div class="j-hr"></div>
         </div>
-        <div class="j-private">
+        <div class="j-private animated fadeInLeftBig" id="dowebok">
           <ul>
             <li>
               <div class="j-magnify">
@@ -50,17 +51,12 @@
               <p class="j-p10">地 址：成都</p>
               <div class="j-align">
                 <div class="j-align-left">
-                  <img
-                    class="lazy"
-                    data-original="../../assets/img/icon_1.png"
-                    alt=""
-                  />
+                  <img v-lazy="require('../../assets/img/icon_1.png')" alt="" />
                   <span>：夜场模特</span>
                 </div>
                 <div class="j-align-right">
                   <img
-                    class="lazy"
-                    data-original="../../assets/img/icon_2.png"
+                    v-lazy="require('../../assets/img/icon_2.png')"
                     alt=""
                   /><span>：1203人</span>
                 </div>
@@ -76,17 +72,12 @@
               <p class="j-p10">地 址：成都</p>
               <div class="j-align">
                 <div class="j-align-left">
-                  <img
-                    class="lazy"
-                    data-original="../../assets/img/icon_1.png"
-                    alt=""
-                  />
+                  <img v-lazy="require('../../assets/img/icon_1.png')" alt="" />
                   <span>：夜场模特</span>
                 </div>
                 <div class="j-align-right">
                   <img
-                    class="lazy"
-                    data-original="../../assets/img/icon_2.png"
+                    v-lazy="require('../../assets/img/icon_2.png')"
                     alt=""
                   /><span>：1203人</span>
                 </div>
@@ -102,17 +93,12 @@
               <p class="j-p10">地 址：成都</p>
               <div class="j-align">
                 <div class="j-align-left">
-                  <img
-                    class="lazy"
-                    data-original="../../assets/img/icon_1.png"
-                    alt=""
-                  />
+                  <img v-lazy="require('../../assets/img/icon_1.png')" alt="" />
                   <span>：夜场模特</span>
                 </div>
                 <div class="j-align-right">
                   <img
-                    class="lazy"
-                    data-original="../../assets/img/icon_2.png"
+                    v-lazy="require('../../assets/img/icon_2.png')"
                     alt=""
                   /><span>：1203人</span>
                 </div>
@@ -132,9 +118,11 @@
       <div class="w1200">
         <div class="j-about">
           <div class="j-row_11">
-            <p class="j-about-p">关于/ABOUT</p>
-            <h2>锦缘国际夜总会</h2>
-            <p class="p-play">
+            <div class="j-animated bounceIn animated" id="dowebok">
+              <p class="j-about-p">关于/ABOUT</p>
+            </div>
+            <h2 class="animated rotateIn" id="dowebok">锦缘国际夜总会</h2>
+            <p class="p-play animated rubberBand" id="dowebok">
               成都夜总会，成都夜场，成都酒吧各种模特佳丽【13688143752】，设备齐<br />全，装修高端，资源丰富，生意每天开到爆，欢迎随时预定包厢
             </p>
             <a href="">了解详情</a>
@@ -147,63 +135,70 @@
     <!-- 模特部分 start -->
     <div class="w1200">
       <div class="j-blur">
-        <div class="j-trademark">
+        <div class="j-trademark bounceIn animated" id="dowebok">
           <h2>高端KTV夜总会模特</h2>
           <div class="j-hr"></div>
         </div>
         <div class="j-inner">
-          <ul>
-            <li>
-              <img
-                class="lazy"
-                data-original="../../assets/img/bell_1.jpg"
-                alt=""
-              />
-              <p>成都夜总会模特</p>
-            </li>
-            <li>
-              <img
-                class="lazy"
-                data-original="../../assets/img/belle_2.jpg"
-                alt=""
-              />
-              <p>成都夜场模特</p>
-            </li>
-            <li>
-              <img
-                class="lazy"
-                data-original="../../assets/img/belle_3.jpg"
-                alt=""
-              />
-              <p>成都酒吧模特</p>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <img
-                class="lazy"
-                data-original="../../assets/img/belle_4.jpg"
-                alt=""
-              />
-              <p>成都夜总会模特</p>
-            </li>
-            <li>
-              <img
-                class="lazy"
-                data-original="../../assets/img/belle_5.jpg"
-                alt=""
-              />
-              <p>成都夜场模特</p>
-            </li>
-            <li>
-              <img
-                class="lazy"
-                data-original="../../assets/img/belle_6.jpg"
-                alt=""
-              />
-              <p>成都酒吧模特</p>
-            </li>
-          </ul>
+          <div class="animated slideInLeft" id="dowebok">
+            <ul>
+              <li>
+                <div class="j-scale-1">
+                  <img v-lazy="require('../../assets/img/bell_1.jpg')" alt="" />
+                </div>
+                <p>成都夜总会模特</p>
+              </li>
+              <li>
+                <div class="j-scale-1">
+                  <img
+                    v-lazy="require('../../assets/img/belle_2.jpg')"
+                    alt=""
+                  />
+                </div>
+                <p>成都夜场模特</p>
+              </li>
+              <li>
+                <div class="j-scale-1">
+                  <img
+                    v-lazy="require('../../assets/img/belle_3.jpg')"
+                    alt=""
+                  />
+                </div>
+                <p>成都酒吧模特</p>
+              </li>
+            </ul>
+          </div>
+          <div class="animated slideInRight" id="dowebok">
+            <ul>
+              <li>
+                <div class="j-scale-1">
+                  <img
+                    v-lazy="require('../../assets/img/belle_4.jpg')"
+                    alt=""
+                  />
+                </div>
+                <p>成都夜总会模特</p>
+              </li>
+              <li>
+                <div class="j-scale-1">
+                  <img
+                    v-lazy="require('../../assets/img/belle_5.jpg')"
+                    alt=""
+                  />
+                </div>
+                <p>成都夜场模特</p>
+              </li>
+              <li>
+                <div class="j-scale-1">
+                  <img
+                    v-lazy="require('../../assets/img/belle_6.jpg')"
+                    alt=""
+                  />
+                </div>
+                <p>成都酒吧模特</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -212,20 +207,16 @@
     <!-- 新闻资讯  start-->
     <div class="j-journalism">
       <div class="w1200">
-        <div class="j-journalism-title">
+        <div class="j-journalism-title animated rollIn" id="dowebok">
           <h2>新闻咨询</h2>
           <p>T E A C H E R</p>
           <div class="j-hr"></div>
         </div>
         <div class="j-play-item">
-          <div class="j-img-left">
-            <img
-              class="lazy"
-              data-original="../../assets/img/image-110.jpeg"
-              alt=""
-            />
+          <div class="j-img-left animated bounceInLeft" id="dowebok">
+            <img v-lazy="require('../../assets/img/image-110.jpeg')" alt="" />
           </div>
-          <div class="j-right">
+          <div class="j-right animated bounceInRight" id="dowebok">
             <div class="j-right-1 j-shift">
               <div class="j-divs">
                 <i></i>
@@ -239,11 +230,7 @@
             <div class="j-right-1 j-great">
               <div class="j-doraem">
                 <div class="j-image-play">
-                  <img
-                    class="lazy"
-                    data-original="../../assets/img/img-1.png"
-                    alt=""
-                  />
+                  <img v-lazy="require('../../assets/img/img-1.png')" alt="" />
                 </div>
                 <div class="j-divs j-model">
                   <i></i>
@@ -258,11 +245,7 @@
             <div class="j-right-1 j-great">
               <div class="j-doraem">
                 <div class="j-image-play">
-                  <img
-                    class="lazy"
-                    data-original="../../assets/img/img-1.png"
-                    alt=""
-                  />
+                  <img v-lazy="require('../../assets/img/img-1.png')" alt="" />
                 </div>
                 <div class="j-divs j-model">
                   <i></i>
@@ -277,11 +260,7 @@
             <div class="j-right-1 j-great">
               <div class="j-doraem">
                 <div class="j-image-play j-img-bottom">
-                  <img
-                    class="lazy"
-                    data-original="../../assets/img/img-2.png"
-                    alt=""
-                  />
+                  <img v-lazy="require('../../assets/img/img-2.png')" alt="" />
                 </div>
                 <div class="j-divs j-model">
                   <i></i>
@@ -300,11 +279,32 @@
     <!-- 新闻资讯  end-->
   </div>
 </template>
-
 <script>
-// import "@/assets/js/index";
+import("../../assets/js/index");
+export default {
+  data() {
+    return {
+      bgImgArr: [
+        {
+          image: "",
+        },
+      ],
+    };
+  },
+  created() {
+    const url = "http://49.235.93.38:82/index.php/api/carousel_map/list";
+    this.$axios
+      .get(url)
+      .then((response) => {
+        this.bgImgArr = response.data;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
+};
 </script>
-
 <style scoped>
+@import "../../assets/css/animate.min.css";
 @import "../../assets/css/index.css";
 </style>

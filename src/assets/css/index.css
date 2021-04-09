@@ -5,6 +5,10 @@
     margin: 0;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 img {
     vertical-align: middle;
     cursor: pointer;
@@ -59,8 +63,12 @@ li {
 .j-banner-image {
     width: 100%;
     height: 600px;
-    background: url("../img/image-10.jpg") no-repeat;
     background-size: 100%;
+}
+
+.j-b-i {
+    width: 100%;
+    height: 100%;
 }
 
 .j-product {
@@ -156,7 +164,6 @@ li {
     height: 14px;
     margin: 0 auto;
     margin-top: 22px;
-    margin-bottom: 200px;
     border-top: rgb(60, 181, 213) 2px solid;
 }
 
@@ -172,21 +179,6 @@ li {
     100% {
         opacity: 1;
         transform: translateY(-100px);
-    }
-}
-
-.j-private {
-    animation: box 0.8s linear forwards;
-}
-
-@keyframes box {
-    0% {
-        opacity: 0;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(-200px);
     }
 }
 
@@ -223,7 +215,7 @@ li {
 }
 
 .j-magnify:hover img {
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
 .j-private .j-align .j-align-left img {
@@ -268,7 +260,7 @@ li {
     text-align: center;
     color: #fff;
     margin: 0 auto;
-    margin-top: -79px;
+    margin-top: 79px;
     margin-bottom: 121px;
 }
 
@@ -307,20 +299,8 @@ li {
     color: #fff;
 }
 
-@keyframes about {
-    0% {
-        opacity: 0;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(-30px);
-    }
-}
-
 .j-row_11 .j-about-p {
     margin-top: 72px;
-    animation: about 0.7s linear forwards;
 }
 
 .j-row_11 h2 {
@@ -340,6 +320,12 @@ li {
     padding: 10px 90px;
     margin-top: 114px;
     cursor: pointer;
+}
+
+.j-row_11 a:hover {
+    background-color: #fff;
+    color: #000;
+    transition: all 0.9s ease;
 }
 
 
@@ -407,6 +393,20 @@ li {
     margin: 0 97px;
 }
 
+.j-inner .j-scale-1 {
+    overflow: hidden;
+}
+
+.j-scale-1 img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease;
+}
+
+.j-inner .j-scale-1:hover img {
+    transform: scale(1.15);
+}
+
 
 /* 模特部分 end */
 
@@ -416,6 +416,7 @@ li {
 .j-journalism {
     width: 100%;
     background-color: #fff;
+    padding-bottom: 100px;
 }
 
 .j-journalism-title {
@@ -552,6 +553,20 @@ li {
     border: 1px solid #3B5FCB;
     transition-duration: .5s;
     transition-timing-function: ease;
+}
+
+.j-img-left {
+    overflow: hidden;
+}
+
+.j-img-left img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease;
+}
+
+.j-img-left:hover img {
+    transform: scale(1.15);
 }
 
 

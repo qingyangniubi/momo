@@ -79,7 +79,6 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   data() {
     return {
@@ -88,15 +87,6 @@ export default {
   },
   created: function () {
     this.route = location.hash.substring(1);
-    const url = "http://49.235.93.38:82/index.php/api/carousel_map/list";
-    axios
-      .get(url)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
   },
   watch: {
     $route: "getPath",
