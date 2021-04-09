@@ -35,7 +35,7 @@
             </li>
           </ul>
           <div
-            class="box  animate__animated animate__animated  animate__backInRight"
+            class="box  animate__animated animate__animated  animate__fadeInRightBig"
           >
             <div id="items" class="items-bottom">
               <h1>关于招聘</h1>
@@ -296,6 +296,7 @@ textarea {
 
 .regard-left {
   display: flex;
+  overflow: hidden;
 }
 .regard-left .list li {
   background-color: #ebebeb;
@@ -351,6 +352,7 @@ textarea {
   top: 0;
   right: 0;
   background-color: #fff;
+  overflow: hidden;
 }
 
 #items h1 {
