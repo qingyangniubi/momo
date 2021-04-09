@@ -22,7 +22,7 @@ import $ from "jquery";
 // 监听滚动动画
 var scrolltop = null;
 var h = document.documentElement.clientHeight;
-console.log($(".j-top").offset().top);
+// console.log($(".j-top").offset().top);
 window.onscroll = function () {
     scrolltop = document.documentElement.scrollTop;
     if (scrolltop >= $(".j-top").offset().top - h - 50) {

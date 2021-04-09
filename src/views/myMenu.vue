@@ -94,6 +94,28 @@ export default {
   methods: {
     getPath() {
       this.route = this.$route.path;
+
+      switch (this.route) {
+        case "/index":
+          break;
+        case "/about_us":
+          break;
+        case "/model_shows":
+          var url = "http://49.235.93.38:82/index.php/api/models/list";
+          this.$axios.get(url).then((response) => {
+            console.log(response);
+            this.$store.state.modelData = response.data;
+          });
+          break;
+        case "/environment_show":
+          break;
+        case "/evening_news":
+          break;
+        case "/contact_us":
+          break;
+        case "/recruitment_requirements":
+          break;
+      }
     },
   },
 };

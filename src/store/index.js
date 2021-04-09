@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    imagePath: '//49.235.93.38:82',
+    imagePath: '//49.235.93.38:82', // 图片域名
+    modelData: [],
   },
   mutations: {
 
