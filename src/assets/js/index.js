@@ -14,76 +14,51 @@
  */
 import $ from "jquery";
 
-
-
-
-
-
 // 监听滚动动画
 var scrolltop = null;
 var h = document.documentElement.clientHeight;
-// console.log($(".j-top").offset().top);
-window.onscroll = function () {
+window.onscroll = setAnimated
+let setAnimated = function setAnimated() {
     scrolltop = document.documentElement.scrollTop;
     if (scrolltop >= $(".j-top").offset().top - h - 50) {
         $(".j-top").show();
-    } else {
-        $(".j-top").hide();
     }
-    console.log($(".j-private").offset().top);
     if (scrolltop >= $(".j-private").offset().top - h - 50) {
-        $(".j-private").show();
-    } else {
-        $(".j-private").hide();
+        $(".j-private").addClass("fadeInLeftBig");
     }
 
     if (scrolltop >= $(".j-international").offset().top - h + 50) {
-        $(".j-animated").show();
-    } else {
-        $(".j-animated").hide();
+        $(".j-animated").addClass("bounceIn");
     }
 
 
     if (scrolltop >= $(".j-international").offset().top - h + 100) {
-        $(".rotateIn").show();
-    } else {
-        $(".rotateIn").hide();
+        $(".j-rotateIn").addClass("rotateIn");
     }
     if (scrolltop >= $(".j-international").offset().top - h + 150) {
-        $(".p-play").show();
-    } else {
-        $(".p-play").hide();
+        $(".p-play").addClass("rubberBand");
     }
-
 
     if (scrolltop >= $(".j-trademark").offset().top - h - 50) {
-        $(".j-trademark").show();
-    } else {
-        $(".j-trademark").hide();
+        $(".j-trademark").addClass("bounceIn");
     }
-    if (scrolltop >= $(".slideInLeft").offset().top - h - 50) {
-        $(".slideInLeft").show();
-    } else {
-        $(".slideInLeft").hide();
+    if (scrolltop >= $(".j-slideInLeft").offset().top - h - 50) {
+        $(".j-slideInLeft").addClass("slideInLeft");
     }
-    if (scrolltop >= $(".slideInRight").offset().top - h - 50) {
-        $(".slideInRight").show();
-    } else {
-        $(".slideInRight").hide();
+    if (scrolltop >= $(".j-slideInRight").offset().top - h - 50) {
+        $(".j-slideInRight").addClass("slideInRight");
     }
 
     if (scrolltop >= $(".j-journalism").offset().top - h - 50) {
-        $(".j-journalism-title").show();
-    } else {
-        $(".j-journalism-title").hide();
+        $(".j-journalism-title").addClass("rollIn");
     }
 
     if (scrolltop >= $(".j-play-item").offset().top - h - 50) {
-        $(".j-right").show();
-        $(".j-img-left").show();
-    } else {
-        $(".j-right").hide();
-        $(".j-img-left").hide();
+        $(".j-right").addClass("bounceInRight");
+        $(".j-img-left").addClass("bounceInLeft");
     }
 }
 
+export default {
+    setAnimated
+}

@@ -15,7 +15,9 @@
       <div class="regard-center w1200">
         <!-- 左侧边栏 -->
         <div class="regard-left">
-          <ul class="list animate__animated animate__bounce animate__backInUp">
+          <ul
+            class="list animate__animated animate__bounce animate__bounceInLeft"
+          >
             <li>
               <router-link to="/about_us">关于我们</router-link>
             </li>
@@ -30,7 +32,7 @@
               >
             </li>
           </ul>
-          <div class="box animate__animated  animate__backInRight">
+          <div class="box animate__animated animate__bounceInUp">
             <div id="items" class="items-center">
               <h1>联系我们</h1>
               <p>成都夜总会，成都夜场，成都酒吧各种模特佳丽【13688143752】，</p>
@@ -291,6 +293,7 @@ textarea {
 
 .regard-left {
   display: flex;
+  overflow: hidden;
 }
 .regard-left .list li {
   background-color: #ebebeb;
@@ -346,6 +349,7 @@ textarea {
   top: 0;
   right: 0;
   background-color: #fff;
+  overflow: hidden;
 }
 
 #items h1 {

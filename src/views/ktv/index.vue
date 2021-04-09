@@ -39,7 +39,7 @@
           <p>环境/AMBIENT</p>
           <div class="j-hr"></div>
         </div>
-        <div class="j-private animated fadeInLeftBig" id="dowebok">
+        <div class="j-private animated" id="dowebok">
           <ul>
             <li>
               <div class="j-magnify">
@@ -118,11 +118,11 @@
       <div class="w1200">
         <div class="j-about">
           <div class="j-row_11">
-            <div class="j-animated bounceIn animated" id="dowebok">
+            <div class="j-animated animated" id="dowebok">
               <p class="j-about-p">关于/ABOUT</p>
             </div>
-            <h2 class="animated rotateIn" id="dowebok">锦缘国际夜总会</h2>
-            <p class="p-play animated rubberBand" id="dowebok">
+            <h2 class="animated j-rotateIn" id="dowebok">锦缘国际夜总会</h2>
+            <p class="p-play animated" id="dowebok">
               成都夜总会，成都夜场，成都酒吧各种模特佳丽【13688143752】，设备齐<br />全，装修高端，资源丰富，生意每天开到爆，欢迎随时预定包厢
             </p>
             <a href="">了解详情</a>
@@ -135,12 +135,12 @@
     <!-- 模特部分 start -->
     <div class="w1200">
       <div class="j-blur">
-        <div class="j-trademark bounceIn animated" id="dowebok">
+        <div class="j-trademark animated" id="dowebok">
           <h2>高端KTV夜总会模特</h2>
           <div class="j-hr"></div>
         </div>
         <div class="j-inner">
-          <div class="animated slideInLeft" id="dowebok">
+          <div class="animated j-slideInLeft" id="dowebok">
             <ul>
               <li>
                 <div class="j-scale-1">
@@ -168,7 +168,7 @@
               </li>
             </ul>
           </div>
-          <div class="animated slideInRight" id="dowebok">
+          <div class="animated j-slideInRight" id="dowebok">
             <ul>
               <li>
                 <div class="j-scale-1">
@@ -207,16 +207,16 @@
     <!-- 新闻资讯  start-->
     <div class="j-journalism">
       <div class="w1200">
-        <div class="j-journalism-title animated rollIn" id="dowebok">
+        <div class="j-journalism-title animated" id="dowebok">
           <h2>新闻咨询</h2>
           <p>T E A C H E R</p>
           <div class="j-hr"></div>
         </div>
         <div class="j-play-item">
-          <div class="j-img-left animated bounceInLeft" id="dowebok">
+          <div class="j-img-left animated" id="dowebok">
             <img v-lazy="require('../../assets/img/image-110.jpeg')" alt="" />
           </div>
-          <div class="j-right animated bounceInRight" id="dowebok">
+          <div class="j-right animated" id="dowebok">
             <div class="j-right-1 j-shift">
               <div class="j-divs">
                 <i></i>
@@ -280,7 +280,7 @@
   </div>
 </template>
 <script>
-import("../../assets/js/index");
+import animate from "../../assets/js/index";
 export default {
   data() {
     return {
@@ -292,6 +292,7 @@ export default {
     };
   },
   created() {
+    window.onscroll = animate.setAnimated;
     const url = "http://49.235.93.38:82/index.php/api/carousel_map/list";
     this.$axios
       .get(url)
@@ -301,6 +302,10 @@ export default {
       .catch(function (error) {
         console.log(error);
       });
+  },
+  animate,
+  destroyed() {
+    window.onscroll = null;
   },
 };
 </script>

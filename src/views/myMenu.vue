@@ -101,7 +101,12 @@ export default {
         case "/about_us":
           break;
         case "/model_shows":
-
+          if (this.$store.state.modelData == []) {
+            var url = "http://49.235.93.38:82/index.php/api/models/list";
+            this.$axios.get(url).then((response) => {
+              this.$store.state.modelData = response.data;
+            });
+          }
           break;
         case "/environment_show":
           break;
