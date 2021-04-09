@@ -25,7 +25,7 @@
               <router-link to="/recruitment_requirements">招聘要求</router-link>
             </li>
           </ul>
-          <div class="box animate__animated  animate__backInRight">
+          <div class="box animate__animated  animate__lightSpeedInRight">
             <div id="items" class="items-top">
               <h1>关于我们</h1>
               <div>
@@ -283,6 +283,7 @@ textarea {
 
 .regard-left {
   display: flex;
+  overflow: hidden;
 }
 .regard-left .list li {
   background-color: #ebebeb;
@@ -338,6 +339,7 @@ textarea {
   top: 0;
   right: 0;
   background-color: #fff;
+  overflow: hidden;
 }
 
 #items h1 {
