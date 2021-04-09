@@ -15,7 +15,9 @@
       <div class="regard-center w1200">
         <!-- 左侧边栏 -->
         <div class="regard-left">
-          <ul class="list animate__animated animate__bounce animate__backInUp">
+          <ul
+            class="list animate__animated animate__bounce animate__fadeInLeft"
+          >
             <li>
               <a href="javascript:;" @click="$router.push('/about_us')"
                 >关于我们</a
@@ -35,7 +37,7 @@
             </li>
           </ul>
           <div
-            class="box  animate__animated animate__animated  animate__fadeInRightBig"
+            class="box animate__animated animate__animated animate__fadeInRight"
           >
             <div id="items" class="items-bottom">
               <h1>关于招聘</h1>

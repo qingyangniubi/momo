@@ -51,7 +51,6 @@ li {
     list-style: none;
 }
 
-
 /* banner start */
 
 .j-banner {
@@ -395,6 +394,8 @@ li {
 
 .j-inner .j-scale-1 {
     overflow: hidden;
+    width: 100%;
+    height: auto;
 }
 
 .j-scale-1 img {

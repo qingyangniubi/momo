@@ -31,6 +31,7 @@ header {
 
 .el-container .el-main {
     padding: 0;
+    overflow: hidden;
 }
 
 .logo {

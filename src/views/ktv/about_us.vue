@@ -14,8 +14,10 @@
       <div class="regard-center w1200">
         <!-- 左侧边栏 -->
         <div class="regard-left">
-          <ul class="list animate__animated animate__bounce animate__backInUp">
-            <li class="point ">
+          <ul
+            class="list animate__animated animate__bounce animate__bounceInLeft"
+          >
+            <li class="point">
               <router-link to="/about_us">关于我们</router-link>
             </li>
             <li>
@@ -25,7 +27,7 @@
               <router-link to="/recruitment_requirements">招聘要求</router-link>
             </li>
           </ul>
-          <div class="box animate__animated  animate__lightSpeedInRight">
+          <div class="box animate__animated animate__lightSpeedInRight">
             <div id="items" class="items-top">
               <h1>关于我们</h1>
               <div>
