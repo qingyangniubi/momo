@@ -27,7 +27,7 @@ export default
             path: '/recruitment_requirements',
             component: () => import("../views/ktv/recruitment_requirements.vue")
         },{
-            path:"/model",
+            path:"/model/:id",
             component:()=>import("../views/ktv/model_shows_particulars.vue"),
         }
     ]
