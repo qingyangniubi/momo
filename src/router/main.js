@@ -27,10 +27,10 @@ export default
             path: '/recruitment_requirements',
             component: () => import("../views/ktv/recruitment_requirements.vue")
         }, {
-            path: "/model",
-            component: () => import("../views/ktv/model_shows_particulars.vue"),
+            path:"/model/:id",
+            component:()=>import("../views/ktv/model_shows_particulars.vue"),
         }, {
             path: "/chengdu_evening",
             component: () => import("../views/ktv/chengdu_evening.vue")
-        }
+        },
     ]
