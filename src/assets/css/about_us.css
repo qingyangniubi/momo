@@ -1,7 +1,4 @@
-/*清除元素默认的内外边距  */
-
-/*让所有斜体 不倾斜*/
-
+/*清除元素默认的内外边距  */ /*让所有斜体 不倾斜*/
 em,
 i {
   font-style: normal;
@@ -154,8 +151,11 @@ textarea {
 
 .regard-left {
   display: flex;
+  overflow: hidden;
 }
-
+.regard-left .list li {
+  background-color: #ebebeb;
+}
 .regard-left a {
   margin-top: 20px;
   font-family: 微软雅黑;
@@ -207,6 +207,7 @@ textarea {
   top: 0;
   right: 0;
   background-color: #fff;
+  overflow: hidden;
 }
 
 #items h1 {

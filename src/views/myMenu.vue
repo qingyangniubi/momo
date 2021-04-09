@@ -93,28 +93,28 @@ export default {
   },
   methods: {
     getPath() {
-      this.route = this.$route.path;
-
-      switch (this.route) {
+      switch (this.$route.path) {
         case "/index":
+          this.route = this.$route.path;
           break;
         case "/about_us":
+          this.route = this.$route.path;
           break;
         case "/model_shows":
-          if (this.$store.state.modelData == []) {
-            var url = "http://49.235.93.38:82/index.php/api/models/list";
-            this.$axios.get(url).then((response) => {
-              this.$store.state.modelData = response.data;
-            });
-          }
+          this.route = this.$route.path;
           break;
         case "/environment_show":
+          this.route = this.$route.path;
+
           break;
         case "/evening_news":
+          this.route = this.$route.path;
           break;
         case "/contact_us":
+          this.route = this.$route.path;
           break;
         case "/recruitment_requirements":
+          this.route = this.$route.path;
           break;
       }
     },
