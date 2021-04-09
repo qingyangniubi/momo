@@ -19,7 +19,7 @@
               active-text-color="#409EFF"
               text-color="#333"
               :router="true"
-              default-active="/index"
+              :default-active="route"
             >
               <el-menu-item index="/index">首页</el-menu-item>
               <el-menu-item index="/about_us">关于我们</el-menu-item>
@@ -32,8 +32,8 @@
               >
               <el-menu-item class="li-tel"
                 ><img src="../assets/img/7877635_1538278040.png" alt="" />
-                <span>13688143752</span></el-menu-item
-              >
+                <span>13688143752 </span>
+              </el-menu-item>
               <div class="line"></div>
             </el-menu>
           </el-col>
@@ -79,7 +79,47 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      route: "",
+    };
+  },
+  created: function () {
+    this.route = location.hash.substring(1);
+  },
+  watch: {
+    $route: "getPath",
+  },
+  methods: {
+    getPath() {
+      this.route = this.$route.path;
+
+      switch (this.route) {
+        case "/index":
+          break;
+        case "/about_us":
+          break;
+        case "/model_shows":
+          if (this.$store.state.modelData == []) {
+            var url = "http://49.235.93.38:82/index.php/api/models/list";
+            this.$axios.get(url).then((response) => {
+              this.$store.state.modelData = response.data;
+            });
+          }
+          break;
+        case "/environment_show":
+          break;
+        case "/evening_news":
+          break;
+        case "/contact_us":
+          break;
+        case "/recruitment_requirements":
+          break;
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>

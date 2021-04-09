@@ -2,13 +2,16 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-
 // 引入element ui
 import ElementUi from 'element-ui'
 import '../node_modules/element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUi)
-
-Vue.config.productionTip = false
+import axios from "axios";
+Vue.prototype.$axios = axios;
+Vue.config.productionTip = false;
+//懒加载
+import VueLazyload from 'vue-lazyload';
+Vue.use(VueLazyload);
 
 new Vue({
   router,

@@ -4,8 +4,13 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    imagePath: '//49.235.93.38:82', // 图片域名
+    modelData: [], // 模特信息
+  },
+  mutations: {
+
+  },
   actions: {},
   modules: {}
 })
