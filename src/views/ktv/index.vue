@@ -280,7 +280,7 @@
   </div>
 </template>
 <script>
-import("../../assets/js/index");
+import "../../assets/js/index";
 export default {
   data() {
     return {

@@ -15,14 +15,9 @@
 import $ from "jquery";
 
 
-
-
-
-
 // 监听滚动动画
 var scrolltop = null;
 var h = document.documentElement.clientHeight;
-// console.log($(".j-top").offset().top);
 window.onscroll = function () {
     scrolltop = document.documentElement.scrollTop;
     if (scrolltop >= $(".j-top").offset().top - h - 50) {
@@ -30,7 +25,6 @@ window.onscroll = function () {
     } else {
         $(".j-top").hide();
     }
-    console.log($(".j-private").offset().top);
     if (scrolltop >= $(".j-private").offset().top - h - 50) {
         $(".j-private").show();
     } else {
@@ -54,7 +48,6 @@ window.onscroll = function () {
     } else {
         $(".p-play").hide();
     }
-
 
     if (scrolltop >= $(".j-trademark").offset().top - h - 50) {
         $(".j-trademark").show();
