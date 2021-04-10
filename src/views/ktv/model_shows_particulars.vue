@@ -1,15 +1,15 @@
 <template>
-  <div>
+  <div style="background-color='#fff">
     <el-breadcrumb separator-class="el-icon-d-arrow-right">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>
-        <a href="/">模特展示</a>
+      <el-breadcrumb-item :to="{ path: '/model_shows' }">
+        <a >模特展示</a>
+      </el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/model_shows' }">
+        <a >高端模特</a>
       </el-breadcrumb-item>
       <el-breadcrumb-item>
-        <a href="/">高端模特</a>
-      </el-breadcrumb-item>
-      <el-breadcrumb-item>
-        <a href="/">成都夜总会模特</a>
+        <a href="#">成都夜总会模特</a>
       </el-breadcrumb-item>
     </el-breadcrumb>
 
@@ -31,84 +31,82 @@
         </div>
       </el-aside>
       <!-- -----------------------右边 ----------------------- -->
-      <el-main class="main-left">
-        <div class="show">
-          <img src="../../assets/img/MoHead_Bg.png" alt />
-          <span>详细说明</span>
-        </div>
-        <!-- 详细 放大镜 -->
-        <div class="magnifyingGlass-box">
-          <div>
-            <div
-              class="glass-left"
-              ref="big"
-              @mouseenter="onMouseEnter"
-              @mouseleave="leave"
-            >
-              <img :src="$store.state.imagePath + modelDataList.image" alt />
-              <div
-                class="coating"
-                ref="small"
-                v-show="isShow"
-                @mousemove="onMouseMoveSmall($event)"
-              ></div>
-            </div>
-            <div class="share">
-              <ul class="share-ul">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
+      <div ref="mainleft">
+        <el-main class="main-left">
+          <div class="show">
+            <img src="../../assets/img/MoHead_Bg.png" alt />
+            <span>详细说明</span>
           </div>
-          <div class="glass-right">
-            <div class="showImg-box" v-show="isShow">
-              <div class="showImg">
+          <!-- 详细 放大镜 -->
+          <div class="magnifyingGlass-box">
+            <div>
+              <div
+                class="glass-left"
+                ref="big"
+                @mouseenter="onMouseEnter"
+                @mouseleave="leave"
+                @mousemove="onMouseMoveSmall($event)"
+              >
                 <img :src="$store.state.imagePath + modelDataList.image" alt />
+                <div class="coating" ref="small" v-show="isShow"></div>
+              </div>
+              <!-- 分享 -->
+              <div class="share">
+                <ul class="share-ul">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
               </div>
             </div>
-            <div class="glass-right-text">{{ modelDataList.title }}</div>
-            <div class="money">
-              <span>价格</span>
-              <b>{{ modelDataList.price }}</b>
+            <div class="glass-right">
+              <div class="showImg-box" v-show="isShow">
+                <div class="showImg" ref="showImg">
+                  <img :src="$store.state.imagePath + modelDataList.image" alt />
+                </div>
+              </div>
+              <div class="glass-right-text">{{ modelDataList.title }}</div>
+              <div class="money">
+                <span>价格</span>
+                <b>{{ modelDataList.price }}</b>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- 产品说明 -->
-        <div class="explain">
-          <div class="explain-top">
-            <ul>
-              <li>产品说明</li>
-            </ul>
+          <!-- 产品说明 -->
+          <div class="explain">
+            <div class="explain-top">
+              <ul>
+                <li>产品说明</li>
+              </ul>
+            </div>
+            <div class="explain-bom">
+              <img :src="$store.state.imagePath + modelDataList.image" alt />
+            </div>
           </div>
-          <div class="explain-bom">
-            <img :src="$store.state.imagePath + modelDataList.image" alt />
+          <!-- 相关产品 -->
+          <div class="relatedProducts">
+            <div class="relatedProducts-top">相关产品</div>
+            <div class="relatedProducts-bom">
+              <!-- 轮播图 -->
+              <el-carousel :interval="4000" type="card" height="250px">
+                <el-carousel-item v-for="(item, index) in productListData" :key="item.id">
+                  <a href="#">
+                    <div class="lbt-box" @click="onClickdata(item, index)">
+                      <div class="lbt-box-img">
+                        <img :src="$store.state.imagePath + item.image" alt />
+                      </div>
+                      <p>{{ item.price }}元</p>
+                      <h3>{{ item.title }}</h3>
+                    </div>
+                  </a>
+                </el-carousel-item>
+              </el-carousel>
+            </div>
           </div>
-        </div>
-        <!-- 相关产品 -->
-        <div class="relatedProducts">
-          <div class="relatedProducts-top">相关产品</div>
-          <div class="relatedProducts-bom">
-            <!-- 轮播图 -->
-            <el-carousel :interval="4000" type="card" height="250px">
-              <el-carousel-item
-                v-for="(item, index) in productListData"
-                :key="item.id"
-              >
-                <div class="lbt-box" @click="onClickdata(item, index)">
-                  <div class="lbt-box-img">
-                    <img :src="$store.state.imagePath + item.image" alt />
-                  </div>
-                  <p>{{ item.price }}元</p>
-                  <h3>{{ item.title }}</h3>
-                </div>
-              </el-carousel-item>
-            </el-carousel>
-          </div>
-        </div>
-      </el-main>
+        </el-main>
+      </div>
     </el-container>
   </div>
 </template>
@@ -152,18 +150,37 @@ export default {
     },
     //移动小盒子
     onMouseMoveSmall(e) {
-      // var max =  this.$refs.big.offsetHeight - this.$refs.small.offsetWidth;
-      // var min = 0;
+      var max = this.$refs.big.offsetHeight - this.$refs.small.offsetWidth;
+      var min = 0;
 
-      var sX = this.$refs.small.getBoundingClientRect().left;
-      var sY = this.$refs.small.getBoundingClientRect().top;
-      var smallX = e.clientX;
-      var smallY = e.clientY;
-      var x = smallX - sX;
-      var y = smallY - sY;
-      console.log(x, y);
+      //获取小盒子到顶部和左边的距离
+      var sX = this.$refs.mainleft.offsetLeft + 5;
+      var sY = this.$refs.mainleft.offsetTop + 40;
+      //盒子的距离顶部窗口和左边的距离
+      var smallX = e.pageX;
+      var smallY = e.pageY;
+      //获取小盒子的高度
+      var smallH = this.$refs.small.offsetHeight / 2;
+      var smallW = this.$refs.small.offsetWidth / 2;
+      //求出移动的距离
+      var x = smallX - sX - smallW;
+      var y = smallY - sY - smallH;
+      if (x < min) {
+        x = min;
+      } else if (x > max) {
+        x = max;
+      }
+
+      if (y < min) {
+        y = min;
+      } else if (y > max) {
+        y = max;
+      }
       this.$refs.small.style.left = x + "px";
       this.$refs.small.style.top = y + "px";
+
+      this.$refs.showImg.style.left = -x * 2 + "px";
+      this.$refs.showImg.style.top = -y * 2 + "px";
     },
   },
   created() {
@@ -174,8 +191,7 @@ export default {
         this.storeData = response.data;
         let list = this.storeData.filter((val) => val.id == id);
         this.modelDataList = list[0];
-        console.log(this.modelDataList);
-        this.storeData.splice(id - 1, 1);
+        // this.storeData.splice(id - 1, 1);
         this.productListData = this.storeData;
       }
     });
@@ -219,6 +235,7 @@ li {
 .el-container {
   width: 1200px;
   margin: 0 auto;
+  // background-color: #fff;
 }
 
 .el-aside {
@@ -231,7 +248,7 @@ li {
   // margin-top: 17px;
   padding: 0 10px;
   box-sizing: border-box;
-  border: 1px dotted #1e90ff;
+  border: 1px solid #CCCCCC;
 }
 .uls-select .uls-one {
   margin-top: 28px;
@@ -288,26 +305,27 @@ li {
 
 .main-left {
   position: relative;
-  border: 1px dotted #1e90ff;
+  border: 1px solid  #CCCCCC;
+  margin-bottom: 10px;
 }
 
 .magnifyingGlass-box {
   display: flex;
   margin: 40px 5px 0;
   width: 818px;
-  height: 467px;
+  height: 450px;
   box-sizing: border-box;
 }
 .glass-left {
   position: relative;
-  width: 420px;
-  height: 420px;
+  width: 400px;
+  height: 400px;
   border: 1px solid #3b5fcb;
 }
 .glass-left .coating {
   position: absolute;
-  left: 0;
-  top: 0;
+  // left: 0;
+  // top: 0;
   width: 150px;
   height: 150px;
   background-color: rgba(254, 204, 135, 0.5);
@@ -326,16 +344,15 @@ li {
   top: 0;
   width: 300px;
   height: 300px;
-  background-color: skyblue;
+  background-color: rgb(226, 225, 225);
   overflow: hidden;
 }
 .showImg {
   position: absolute;
   left: 0;
   top: 0;
-  width: 844px;
-  height: 844px;
-  background-color: red;
+  width: 800px;
+  height: 800px;
 }
 .showImg img {
   width: 600px;
@@ -378,7 +395,7 @@ li {
 }
 
 .share-ul {
-  margin-top: 5px;
+  margin-top: 10px;
   display: flex;
   justify-content: flex-end;
 }

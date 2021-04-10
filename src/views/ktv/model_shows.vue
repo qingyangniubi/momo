@@ -2,8 +2,8 @@
   <div>
     <el-breadcrumb separator-class="el-icon-d-arrow-right">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>
-        <a href="javaScript:;" @click="hrefModelShow">模特展示</a>
+      <el-breadcrumb-item :to="{ path: '/model_shows' }">
+        <a  @click="hrefModelShow">模特展示</a>
       </el-breadcrumb-item>
     </el-breadcrumb>
 
