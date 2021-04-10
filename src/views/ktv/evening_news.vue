@@ -28,7 +28,7 @@
           <div class="l-MoBody">
             <div class="l-text-list-module">
               <ul class="l-xd">
-                <li class="f-lex" v-for="(item,index) in information" :key="index" @click="onClicksju">
+                <li class="f-lex" v-for="(item,index) in information" :key="index" @click="onClicksju(item.id)">
                   <div class="l-dot"></div>
                   <a href="javascript:;">{{item.title}}</a>
                 </li>
@@ -75,8 +75,8 @@ export default {
       this.$router.push("/evening_news");
       console.log(12);
     },
-    onClicksju:function(){
-      this.$router.push("/chengdu_evening");
+    onClicksju:function(id){
+      this.$router.push("/chengdu_evening/"+ id);
     }
   },
 };

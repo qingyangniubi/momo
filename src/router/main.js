@@ -30,7 +30,7 @@ export default
             path:"/model/:id",
             component:()=>import("../views/ktv/model_shows_particulars.vue"),
         }, {
-            path: "/chengdu_evening",
+            path: "/chengdu_evening/:id",
             component: () => import("../views/ktv/chengdu_evening.vue")
         },
     ]
