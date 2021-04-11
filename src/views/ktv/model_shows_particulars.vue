@@ -185,7 +185,7 @@ export default {
   },
   created() {
     let id = this.$route.params.id;
-    var url = "http://49.235.93.38:82/index.php/api/models/list";
+    var url = "/index.php/api/models/list";
     this.$axios.get(url).then((response) => {
       if (response.status == 200 && response.statusText == "OK") {
         this.storeData = response.data;

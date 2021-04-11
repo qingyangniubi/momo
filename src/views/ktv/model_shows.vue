@@ -3,7 +3,7 @@
     <el-breadcrumb separator-class="el-icon-d-arrow-right">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/model_shows' }">
-        <a  @click="hrefModelShow">模特展示</a>
+        <a @click="hrefModelShow">模特展示</a>
       </el-breadcrumb-item>
     </el-breadcrumb>
 
@@ -167,7 +167,7 @@ export default {
     },
   },
   created() {
-    var url = "http://49.235.93.38:82/index.php/api/models/list";
+    var url = "/index.php/api/models/list";
     this.$axios.get(url).then((response) => {
       console.log(response);
       if (response.status == 200 && response.statusText == "OK") {

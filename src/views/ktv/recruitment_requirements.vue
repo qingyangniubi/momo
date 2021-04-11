@@ -142,5 +142,5 @@
   </div>
 </template>
 <style>
-@import "../../assets/css/recruitment.css";
+@import "~@/assets/css/recruitment.css";
 </style>

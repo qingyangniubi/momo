@@ -217,13 +217,18 @@
             <img v-lazy="require('../../assets/img/image-110.jpeg')" alt="" />
           </div>
           <div class="j-right animated" id="dowebok">
-            <div class="j-right-1 j-shift">
-              <div class="j-divs">
-                <i></i>
-                <h3>夜场招聘男士面试要求怎么和领班相处</h3>
-                <p>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网络简历其实和纸质简历差别不大，在写网络简历的时候，也应<br />当要引起重视，如今是一个网络信息时代，因此网络简历也是被很多<br />HR看好的，那么一份优秀网络简历的标准是
-                </p>
+            <div class="j-right-1 j-great">
+              <div class="j-doraem">
+                <div class="j-image-play">
+                  <img v-lazy="require('../../assets/img/img-1.png')" alt="" />
+                </div>
+                <div class="j-divs j-model">
+                  <i></i>
+                  <h3>夜总会招聘模特条件改掉这些习惯</h3>
+                  <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;夜总会模特丰厚的薪资，总会吸引着无数青春<br />靓的女孩前来应聘，当然，这些青春靓丽的女孩儿<br />在应聘之前，心中也会有一丝忧虑，总担心自己无<br />法胜任这份工作，无法应聘成功
+                  </p>
+                </div>
               </div>
               <span>2018-08-23</span>
             </div>
@@ -293,7 +298,7 @@ export default {
   },
   created() {
     window.onscroll = animate.setAnimated;
-    const url = "http://49.235.93.38:82/index.php/api/carousel_map/list";
+    const url = "/index.php/api/carousel_map/list";
     this.$axios
       .get(url)
       .then((response) => {
@@ -310,6 +315,6 @@ export default {
 };
 </script>
 <style scoped>
-@import "../../assets/css/animate.min.css";
-@import "../../assets/css/index.css";
+@import "~@/assets/css/animate.min.css";
+@import "~@/assets/css/index.css";
 </style>

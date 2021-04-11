@@ -132,7 +132,7 @@
 </template>
 <style scoped>
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css";
-@import "../../assets/css/about_us.css";
+@import "~@/assets/css/about_us.css";
 </style>
 <script>
 export default {};

@@ -88,7 +88,7 @@
   </div>
 </template>
 <style scoped>
-@import "../../assets/css/evening.css";
+@import "~@/assets/css/evening.css";
 </style>
 <script>
 import axios from "axios";
@@ -100,7 +100,7 @@ export default {
   },
   created() {
     axios
-      .get("http://49.235.93.38:82/index.php/api/journalism/list")
+      .get("/index.php/api/journalism/list")
       .then((res) => {
         this.information = res.data;
       });

@@ -1,6 +1,37 @@
 <template>
   <!-- 首页 -->
   <el-container>
+    <!-- 侧边导航 -->
+    <div class="sidebar">
+      <div class="onlineList">
+        <em class="online_close" id="onlineClose" title="关闭"></em>
+        <div class="online_open" id="onlineOpen"></div>
+        <div id="online_tel_icon" class="online_icon">
+          <div class="pic"><img src="../assets/img/online_tel.png" /></div>
+          <span class="name">电话直呼</span>
+        </div>
+        <div id="online_message_icon" class="online_icon">
+          <div class="pic"><img src="../assets/img/online_message.png" /></div>
+          <span class="name">在线留言</span>
+        </div>
+        <div id="online_email_icon" class="online_icon">
+          <div class="pic">
+            <a href="mailto:260208989@qq.com"
+              ><img src="../assets/img/online_email.png"
+            /></a>
+          </div>
+          <span class="name">发送邮件</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 回到顶部 -->
+    <div
+      class="backTop_Z"
+      id="backTop"
+      @click="backTop"
+      v-show="backTopFlag"
+    ></div>
     <!-- 头部 -->
     <header>
       <div class="header-box w1200">
@@ -77,21 +108,32 @@
     </el-footer>
   </el-container>
 </template>
-
 <script>
 export default {
   data() {
     return {
       route: "",
+      backTopFlag: false,
     };
   },
   created: function () {
     this.route = location.hash.substring(1);
   },
+  mounted() {
+    window.addEventListener("scroll", this.getScroll);
+  },
   watch: {
     $route: "getPath",
   },
   methods: {
+    getScroll() {
+      var winTop = document.documentElement.scrollTop;
+      if (winTop > 150) {
+        this.backTopFlag = true;
+      } else {
+        this.backTopFlag = false;
+      }
+    },
     getPath() {
       switch (this.$route.path) {
         case "/index":
@@ -118,10 +160,11 @@ export default {
           break;
       }
     },
+    backTop() {},
   },
 };
 </script>
 
 <style scoped>
-@import "../assets/css/common.css";
+@import "~@/assets/css/common.css";
 </style>

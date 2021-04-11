@@ -73,5 +73,5 @@
 </template>
 
 <style scoped>
-@import "../../assets/css/environment_show.css";
+@import "~@/assets/css/environment_show.css";
 </style>

@@ -137,5 +137,5 @@
   </div>
 </template>
 <style>
-@import "../../assets/css/contact_us.css";
+@import "~@/assets/css/contact_us.css";
 </style>
