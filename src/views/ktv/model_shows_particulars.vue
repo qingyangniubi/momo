@@ -1,5 +1,30 @@
 <template>
   <div style="background-color='#fff">
+     <!-- 轮播图 -->
+    <!-- banner start -->
+    <div class="j-banner">
+      <div class="j-banner-image">
+        <div class="j-introduce w1200">
+          <div class="j-product">
+            <h3>
+              全场所有啤酒均可享受买二送一，还有更多豪礼等着你!
+              <br />当晚本包间消费满6666以上，当晚可赠送豪华名宿酒店一套，限当天使用。
+            </h3>
+            <p>小包低消1080元 中包低消1280 大包低消1380 豪包低消2680</p>
+          </div>
+          <div class="j-code">
+            <img src="@/assets/img/image_2.png" alt="" />
+          </div>
+          <div class="j-relation">
+            <span>T：13688143752</span>
+          </div>
+          <div class="j-cur">
+            <span class="j-span"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- banner end -->
     <el-breadcrumb separator-class="el-icon-d-arrow-right">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/model_shows' }">
@@ -208,6 +233,88 @@ export default {
 li {
   list-style: none;
 }
+/* banner start */
+
+.j-banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.j-banner-image {
+    width: 100%;
+    height: 600px;
+    background: url("../../assets/img/image-10.jpg") no-repeat;
+    background-size: 100%;
+}
+
+.j-product {
+    position: absolute;
+    width: 803px;
+    background-color: rgba(102, 0, 0, .7);
+    top: 130px;
+    left: 552px;
+}
+
+.j-product h3 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 35px;
+    padding: 42px 0 24px 0;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: "幼圆";
+    z-index: 7;
+}
+
+.j-product p {
+    text-align: center;
+    color: #FBF900;
+    padding-bottom: 29px;
+    font-size: 20px;
+    font-family: "幼圆";
+    font-weight: 400;
+}
+
+.j-code {
+    position: absolute;
+    top: 353px;
+    left: 46.5%;
+}
+
+.j-relation {
+    position: absolute;
+    top: 499px;
+    left: 46.5%;
+    width: 135px;
+    height: 45px;
+    background-color: #D9534F;
+}
+
+.j-relation span {
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+.j-cur span {
+    position: absolute;
+    bottom: 15px;
+    left: 49.5%;
+    display: block;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.j-span {
+    cursor: pointer;
+}
+
+
+/* banner end */
 .el-breadcrumb {
   margin: 0 auto;
   width: 1200px;
