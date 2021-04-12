@@ -32,5 +32,8 @@ export default
         }, {
             path: "/chengdu_evening/:id",
             component: () => import("../views/ktv/chengdu_evening.vue")
-        },
+        },{
+            path:'/ktvenvironmentShowList',
+            component:() => import("../views/ktv/environment_show_list.vue")
+        }
     ]

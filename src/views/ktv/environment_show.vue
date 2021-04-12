@@ -72,6 +72,22 @@
   </div>
 </template>
 
+<script>
+export default {
+    data(){
+      return{
+
+      }
+    },
+    methods:{
+      onClickList(){
+        this.$router.push("ktvenvironmentShowList");
+      }
+    }
+}
+</script>
+
+
 <style scoped>
 @import "~@/assets/css/environment_show.css";
 </style>
