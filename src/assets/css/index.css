@@ -1,0 +1,590 @@
+/* 初始化 */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.clearfix:after {
+    /*伪元素是行内元素 正常浏览器清除浮动方法*/
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    *zoom: 1;
+    /*ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行*/
+}
+
+.main_container {
+    background: #F3F3F3;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+.w1200 {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* banner start */
+
+.j-banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.j-banner-image {
+    width: 100%;
+    height: 600px;
+    background-size: 100%;
+}
+
+.j-b-i {
+    width: 100%;
+    height: 100%;
+}
+
+.j-product {
+    position: absolute;
+    width: 803px;
+    background-color: rgba(102, 0, 0, .7);
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.j-product h3 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 35px;
+    padding: 42px 0 24px 0;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: "幼圆";
+    z-index: 7;
+}
+
+.j-product p {
+    text-align: center;
+    color: #FBF900;
+    padding-bottom: 29px;
+    font-size: 20px;
+    font-family: "幼圆";
+    font-weight: 400;
+}
+
+.j-code {
+    position: absolute;
+    top: 353px;
+    left: 46.5%;
+}
+
+.j-relation {
+    position: absolute;
+    top: 499px;
+    left: 46.5%;
+    width: 135px;
+    height: 45px;
+    background-color: #D9534F;
+}
+
+.j-relation span {
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.j-relation:hover {
+    background-color: #c9302c;
+}
+
+.j-cur span {
+    position: absolute;
+    bottom: 15px;
+    left: 49.5%;
+    display: block;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.j-span {
+    cursor: pointer;
+}
+
+
+/* banner end */
+
+
+/* ENVIRONMENTAL DISPLAY start */
+
+.j-top h1 {
+    font-size: 36px;
+    color: #000;
+    text-align: center;
+    font-weight: 700;
+    margin: 150px 0 34px 0;
+}
+
+.j-top p {
+    text-align: center;
+}
+
+.j-top .j-hr {
+    width: 36px;
+    height: 14px;
+    margin: 0 auto;
+    margin-top: 22px;
+    border-top: rgb(60, 181, 213) 2px solid;
+}
+
+.j-top {
+    animation: move 0.5s linear forwards;
+}
+
+@keyframes move {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-100px);
+    }
+}
+
+.j-private-idx ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.j-private-idx li {
+    background-color: #fff;
+    text-align: center;
+}
+
+.j-private-idx img {
+    width: 380px;
+    height: 220px;
+}
+
+.j-private-idx ul li h3 {
+    color: #666666;
+    padding: 20px 0 30px 0;
+    font-size: 18px;
+    font-family: "微软雅黑";
+}
+
+.j-magnify {
+    overflow: hidden;
+}
+
+.j-magnify img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease;
+}
+
+.j-magnify:hover img {
+    transform: scale(1.15);
+}
+
+.j-private-idx .j-align .j-align-left img {
+    width: 20px;
+    height: 16px;
+}
+
+.j-private-idx .j-align .j-align-right img {
+    width: 19px;
+    height: 19px;
+}
+
+.j-private-idx ul li p {
+    color: #989898;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    line-height: 25px;
+}
+
+.j-private-idx ul li .j-p10 {
+    padding-bottom: 30px;
+}
+
+.j-align {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 32px;
+}
+
+.j-align span {
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #555;
+}
+
+.j-examine {
+    width: 146px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #3CB5D5;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 79px;
+    margin-bottom: 121px;
+}
+
+.j-examine a {
+    font: normal 700 16px '微软雅黑';
+    color: #fff;
+}
+
+
+/* ENVIRONMENTAL DISPLAY start end */
+
+
+/* 锦缘国际夜总会 start */
+
+.j-international {
+    position: relative;
+    width: 100%;
+    height: 768px;
+    background: url("../img/banner-1.jpg") fixed center top;
+    background-size: 100%;
+    margin-bottom: 105px;
+}
+
+.j-about {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1200px;
+    height: 566px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .3);
+}
+
+.j-row_11 {
+    text-align: center;
+    color: #fff;
+}
+
+.j-row_11 .j-about-p {
+    margin-top: 72px;
+}
+
+.j-row_11 h2 {
+    font-size: 42px;
+    margin: 32px 0 82px 0;
+}
+
+.j-row_11 .p-play {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.j-row_11 a {
+    display: inline-block;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 90px;
+    margin-top: 114px;
+    cursor: pointer;
+}
+
+.j-row_11 a:hover {
+    background-color: #fff;
+    color: #000;
+    transition: all 0.9s ease;
+}
+
+
+/* 锦缘国际夜总会 end */
+
+
+/* 模特部分 start */
+
+.j-blur {
+    padding-bottom: 95px;
+}
+
+.j-trademark {
+    text-align: center;
+    animation: trademark 0.5s linear forwards;
+}
+
+@keyframes trademark {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50px);
+    }
+}
+
+.j-blur .j-hr {
+    width: 36px;
+    height: 14px;
+    margin: 0 auto;
+    margin-top: 22px;
+    border-top: rgb(60, 181, 213) 2px solid;
+}
+
+.j-inner {
+    background-color: #fff;
+    padding-bottom: 60px;
+}
+
+.j-inner p {
+    color: #444;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.j-inner p:hover {
+    color: #2090FF;
+}
+
+.j-inner li {
+    padding-top: 12px;
+}
+
+.j-inner ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.j-inner ul li:nth-of-type(3n-1) {
+    margin: 0 97px;
+}
+
+.j-inner .j-scale-1 {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+.j-scale-1 img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease;
+}
+
+.j-inner .j-scale-1:hover img {
+    transform: scale(1.15);
+}
+
+
+/* 模特部分 end */
+
+
+/* 新闻资讯 stert */
+
+.j-journalism {
+    width: 100%;
+    background-color: #fff;
+    padding-bottom: 100px;
+}
+
+.j-journalism-title {
+    animation: title 0.5s linear forwards;
+}
+
+@keyframes title {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50px);
+    }
+}
+
+.j-journalism-title p {
+    text-align: center;
+}
+
+.j-journalism-title h2 {
+    padding-top: 114px;
+    font-family: "微软雅黑";
+    font-size: 32px;
+    color: #333333;
+    text-align: center;
+}
+
+.j-journalism-title p {
+    color: #989898;
+    font-family: SimSun;
+    font-size: 18px;
+    padding-top: 11px;
+}
+
+.j-journalism-title .j-hr {
+    width: 36px;
+    height: 14px;
+    margin: 0 auto;
+    margin-top: 22px;
+    padding-bottom: 10px;
+    border-top: rgb(60, 181, 213) 2px solid;
+}
+
+.j-img-left {
+    margin-right: 93px;
+}
+
+.j-shift {
+    margin-left: 20px;
+}
+
+.j-img-left img {
+    width: 433px;
+    height: 480px;
+}
+
+.j-play-item {
+    position: relative;
+    display: flex;
+}
+
+.j-right {
+    width: 624px;
+    display: flex;
+    flex-direction: column;
+}
+
+.j-right-1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.j-right i {
+    position: absolute;
+    top: 9px;
+    left: -20px;
+    width: 8px;
+    height: 8px;
+    background-color: #3CB5D5;
+    border-radius: 50%;
+}
+
+.j-play-item h3 {
+    color: rgb(102, 102, 102);
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.j-right p {
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: rgb(152, 152, 152);
+    line-height: 23px;
+}
+
+.j-right span {
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #989898;
+    margin-top: 25px;
+}
+
+.j-right .j-divs {
+    position: relative;
+}
+
+.j-model {
+    margin-left: 40px;
+    width: 349px;
+}
+
+.j-model p {
+    text-indent: 2em;
+}
+
+.j-doraem {
+    display: flex;
+}
+
+.j-doraem p {
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+}
+
+.j-image-play img {
+    margin-top: 3px;
+}
+
+.j-img-bottom img {
+    margin-top: 10px;
+}
+
+.j-image-play {
+    width: 100px;
+    height: 80px;
+    border: 1px solid #ccc;
+}
+
+.j-image-play:hover {
+    border: 1px solid #3B5FCB;
+    transition-duration: .5s;
+    transition-timing-function: ease;
+}
+
+.j-img-left {
+    overflow: hidden;
+}
+
+.j-img-left img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease;
+}
+
+.j-img-left:hover img {
+    transform: scale(1.15);
+}
+
+
+/* 新闻资讯 end */

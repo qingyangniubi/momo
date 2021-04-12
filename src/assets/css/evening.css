@@ -1,0 +1,273 @@
+.l-w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.l-nav {
+    display: flex;
+    width: 100%;
+    padding: 46px 0;
+}
+
+.l-nav a {
+    color: rgb(129, 120, 120);
+    font-size: 17px;
+}
+
+.l-nav h4 {
+    color: rgb(129, 120, 120);
+    margin-right: 10px;
+}
+
+.l-nav .l-icon {
+    width: 2px;
+    height: 18px;
+    margin-right: 15px;
+    margin-top: 3px;
+    background-color: rgb(0, 183, 217);
+}
+
+/* .el-menu-item { 
+    padding: 0;
+} */
+
+
+/* banner start */
+
+.j-banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.j-banner-image {
+    width: 100%;
+    height: 600px;
+    background: url("../img/image-10.jpg") no-repeat;
+    background-size: 100%;
+}
+
+.j-product {
+    position: absolute;
+    width: 803px;
+    background-color: rgba(102, 0, 0, .7);
+    top: 130px;
+    left: 552px;
+}
+
+.j-product h3 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 35px;
+    padding: 42px 0 24px 0;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: "幼圆";
+    z-index: 7;
+}
+
+.j-product p {
+    text-align: center;
+    color: #FBF900;
+    padding-bottom: 29px;
+    font-size: 20px;
+    font-family: "幼圆";
+    font-weight: 400;
+}
+
+.j-code {
+    position: absolute;
+    top: 353px;
+    left: 46.5%;
+}
+
+.j-relation {
+    position: absolute;
+    top: 499px;
+    left: 46.5%;
+    width: 135px;
+    height: 45px;
+    background-color: #D9534F;
+}
+
+.j-relation span {
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+.j-cur span {
+    position: absolute;
+    bottom: 15px;
+    left: 49.5%;
+    display: block;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.j-span {
+    cursor: pointer;
+}
+
+
+/* banner end */ 
+
+.lj-customModuleRow {
+    width: 100%;
+    height: 393px;
+    margin-bottom: 135px;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: #fff;
+}
+
+.el-main {
+    background: #f7f7f7;
+}
+
+.lj-customModuleRow .lx-box {
+    display: flex;
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    border-bottom: 2px solid rgb(32, 144, 255);
+}
+
+.lj-customModuleRow .lx-box a {
+    color: rgb(32, 144, 255);
+    font-size: 14px;
+}
+
+.lj-customModuleRow .lx-box .l-icon-one {
+    width: 2px;
+    height: 15px;
+    margin: 9px 4px 9px 10px;
+    background-color: rgb(5, 111, 215);
+}
+
+.l-journalism {
+    width: 100%;
+    height: 50px;
+    /* line-height: 40px; */
+    border-bottom: 2px solid rgb(204, 204, 204);
+}
+
+.l-journalism .box-hzi {
+    display: flex;
+    width: 220px;
+    height: 30px;
+    line-height: 39px;
+    margin-left: 5px;
+}
+
+.l-journalism .l-dot {
+    width: 3px;
+    height: 3px;
+    margin: 22px 5px 0 10px;
+    background-color: rgb(85, 85, 85);
+}
+
+.l-journalism a {
+    color: rgb(68, 68, 68);
+    height: 16px;
+}
+
+.l-MoBody {
+    width: 1198px;
+    height: 271px;
+    margin: 0 auto;
+}
+
+.l-MoBody .l-text-list-module .l-xd {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1198px;
+    padding-top: 7px;
+    margin: 0 auto;
+}
+.l-MoBody .l-xd .f-lex {
+    display: flex;
+    width: 381px;
+    height: 30px;
+    text-overflow:ellipsis; 
+    white-space:nowrap; 
+    overflow:hidden;
+    padding: 0 5px;
+    margin-left: 6px;
+    line-height: 31px;
+    border-bottom: 1px dashed rgb(204, 204, 204);
+}
+
+.l-MoBody .f-lex .l-dot {
+    width: 3px;
+    height: 3px;
+    margin: 18px 5px 0 0;
+    background-color: rgb(85, 85, 85);
+}
+
+.l-MoBody .f-lex a {
+    width: 381px;
+    text-overflow:ellipsis; 
+    white-space:nowrap; 
+    overflow:hidden;
+    font-size: 13px;
+    color: rgb(68, 68, 68);
+}
+.l-paging {
+    display: flex;
+    margin-top: 11px;
+    float: right;
+}
+.l-paging .bled {
+    width: 55px;
+    height: 22px;
+    font-size: 12px;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 2px 7px 0 0 !important;
+    border: 1px solid rgb(170, 170, 170) !important;
+    color: rgb(192, 196, 204) !important;
+}
+
+.l-paging .rih{
+    margin-right: 10px !important;
+}
+
+.l-paging .el-button--primary:hover {
+    color: #fff!important;
+    border: 1px solid rgb(64,158,255) !important;
+}
+.el-button--primary{
+    width: 55px;
+    height: 22px;
+    font-size: 12px;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 2px !important;
+    border: 1px solid rgb(170, 170, 170) !important;
+    color: rgb(105, 105, 105) !important;
+}
+.el-pagination--small .el-pager li:last-child,
+.l-paging .el-pager .number {
+    border:1px solid rgb(170, 170, 170);
+}
+.el-pagination .btn-prev:hover,
+.el-pagination .btn-next:hover,
+.el-pagination.is-background.el-pagination--small .el-pager li:hover {
+    background-color: rgb(64,158,255);
+    color: #fff;
+    border: 1px solid rgb(64,158,255);
+}
+
+.el-pagination .btn-prev,
+.el-pagination .btn-next {
+    border:1px solid rgb(170, 170, 170);
+}
+.el-pagination .btn-next span,
+.el-pagination .btn-prev span {
+    font-size: 12px;
+    padding: 0 6px;
+}
+

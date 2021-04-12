@@ -1,0 +1,452 @@
+<template>
+  <div class="environment">
+    <!-- banner start -->
+    <div class="j-banner">
+      <div class="j-banner-image">
+        <div class="j-introduce w1200">
+          <div class="j-product">
+            <h3>
+              全场所有啤酒均可享受买二送一，还有更多豪礼等着你!
+              <br />当晚本包间消费满6666以上，当晚可赠送豪华名宿酒店一套，限当天使用。
+            </h3>
+            <p>小包低消1080元 中包低消1280 大包低消1380 豪包低消2680</p>
+          </div>
+          <div class="j-code">
+            <img src="@/assets/img/image_2.png" alt />
+          </div>
+          <div class="j-relation">
+            <span>T：13688143752</span>
+          </div>
+          <div class="j-cur">
+            <span class="j-span"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- banner end -->
+
+    <!-- 面包屑 -->
+    <el-breadcrumb separator-class="el-icon-d-arrow-right">
+      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/environment_show' }">
+        <a>模特展示</a>
+      </el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/environment_show' }">
+        <a>高端模特</a>
+      </el-breadcrumb-item>
+      <el-breadcrumb-item>
+        <a href="#">长沙夜总会模特</a>
+      </el-breadcrumb-item>
+    </el-breadcrumb>
+
+    <div class="Bigbox" ref="Bigbox">
+      <!-- 商品详情 -->
+      <div class="x-detail-box">
+        <div class="x-detail-box-left">
+          <div
+            class="x-detail-box-left-img"
+            ref="big"
+            @mouseenter="onMouseEnter"
+            @mouseleave="leave"
+            @mousemove="onMouseMoveSmall($event)"
+          >
+            <img src="../../assets/img/20771746_1609919598.jpeg" alt />
+            <div class="small-box" ref="small" v-show="isShow"></div>
+          </div>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="x-detail-box-right">
+          <div class="show-box" v-show="isShow">
+            <div class="showImg" ref="showImg">
+              <img src="../../assets/img/20771746_1609919598.jpeg" alt />
+            </div>
+          </div>
+          <b>长沙夜总会</b>
+          <p>暂无价格</p>
+        </div>
+      </div>
+
+      <!-- 产品说明 -->
+      <div class="description-of-products">
+        <div class="products-top">产品说明</div>
+        <div class="products-bom">
+          <img src="../../assets/img/20771746_1609919598.jpeg" alt />
+        </div>
+      </div>
+      <!-- //相关产品 -->
+      <div class="related-products">
+        <div class="related-top">相关产品</div>
+        <div class="related-bom">
+          <el-carousel :interval="40000" type="card" height="250px">
+            <el-carousel-item>
+              <a href="#">
+                <div class="lbt-box">
+                  <div class="lbt-box-img">
+                    <img src="../../assets/img/20771746_1609919598.jpeg" alt />
+                  </div>
+                  <p>长沙酒吧</p>
+                </div>
+              </a>
+            </el-carousel-item>
+            <el-carousel-item>
+              <a href="#">
+                <div class="lbt-box">
+                  <div class="lbt-box-img">
+                    <img src="../../assets/img/20771746_1609919598.jpeg" alt />
+                  </div>
+                  <p>长沙酒吧</p>
+                </div>
+              </a>
+            </el-carousel-item>
+            <el-carousel-item>
+              <a href="#">
+                <div class="lbt-box">
+                  <div class="lbt-box-img">
+                    <img src="../../assets/img/20771746_1609919598.jpeg" alt />
+                  </div>
+                  <p>长沙酒吧</p>
+                </div>
+              </a>
+            </el-carousel-item>
+          </el-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      isShow: false, //蒙层显示隐藏
+    };
+  },
+  methods: {
+    //移入
+    onMouseEnter() {
+      this.isShow = true;
+    },
+    //移出
+    leave() {
+      this.isShow = false;
+    },
+    //移动小盒子
+    onMouseMoveSmall(e) {
+      //移动范围最大 最小
+      var maxY = this.$refs.big.offsetHeight - this.$refs.small.offsetHeight;
+      var maxX = this.$refs.big.offsetWidth - this.$refs.small.offsetWidth;
+      var min = 0;
+      //鼠标
+      var Sx = e.pageX;
+      var Sy = e.pageY;
+      //小盒子的位置
+      var smallY = this.$refs.Bigbox.offsetTop;
+      var smallX = this.$refs.Bigbox.offsetLeft;
+      //小盒子的宽高
+      var smallH = this.$refs.small.offsetHeight / 2;
+      var smallW = this.$refs.small.offsetWidth / 2;
+      //求出移动的距离
+      var x = Sx - smallX - smallW;
+      var y = Sy - smallY - smallH;
+      //判断小于0 就等于0   大于最大值  就等于最大值 做限制
+      if (x < min) {
+        x = min;
+      } else if (x > maxX) {
+        x = maxX;
+      }
+
+      if (y < min) {
+        y = min;
+      } else if (y > maxY) {
+        y = maxY;
+      }
+      //赋值
+      this.$refs.small.style.left = x + "px";
+      this.$refs.small.style.top = y + "px";
+
+      this.$refs.showImg.style.left = -x * 2 + "px";
+      this.$refs.showImg.style.top = -y * 2 + "px";
+    },
+  },
+};
+</script>
+
+
+<style scoped lang="less">
+/* banner start */
+* {
+  padding: 0;
+  margin: 0;
+}
+.environment {
+  background-color: #fff;
+}
+.j-banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.j-banner-image {
+  width: 100%;
+  height: 600px;
+  background: url("../../assets/img/image-10.jpg") no-repeat;
+  background-size: 100%;
+}
+
+.j-product {
+  position: absolute;
+  width: 803px;
+  background-color: rgba(102, 0, 0, 0.7);
+  top: 130px;
+  left: 552px;
+}
+
+.j-product h3 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 35px;
+  padding: 42px 0 24px 0;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "幼圆";
+  z-index: 7;
+}
+
+.j-product p {
+  text-align: center;
+  color: #fbf900;
+  padding-bottom: 29px;
+  font-size: 20px;
+  font-family: "幼圆";
+  font-weight: 400;
+}
+
+.j-code {
+  position: absolute;
+  top: 353px;
+  left: 46.5%;
+}
+
+.j-relation {
+  position: absolute;
+  top: 499px;
+  left: 46.5%;
+  width: 135px;
+  height: 45px;
+  background-color: #d9534f;
+}
+
+.j-relation span {
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+}
+
+.j-cur span {
+  position: absolute;
+  bottom: 15px;
+  left: 49.5%;
+  display: block;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.j-span {
+  cursor: pointer;
+}
+
+/* banner end */
+
+// 面包屑
+.el-breadcrumb {
+  margin: 0 auto;
+  width: 1200px;
+  height: 35px;
+  line-height: 35px;
+  color: #9f9dff;
+  background-color: #f8f8f8;
+  text-indent: 10px;
+  margin-bottom: 10px;
+}
+.el-breadcrumb__inner a,
+/deep/ .el-breadcrumb__inner.is-link {
+  //   color: #2090ff;
+  font-weight: 400;
+}
+/deep/.el-breadcrumb__item:last-child .el-breadcrumb__inner a {
+  color: #2090ff;
+  cursor: pointer;
+}
+/deep/.el-icon-d-arrow-right:before {
+  color: #2090ff;
+}
+
+//商品详情
+.Bigbox {
+  margin: 0 auto;
+  width: 1200px;
+}
+.x-detail-box {
+  width: 100%;
+  height: 370px;
+  display: flex;
+  justify-content: space-between;
+}
+.x-detail-box-left {
+  width: 420px;
+}
+.x-detail-box-left-img {
+  position: relative;
+  width: 420px;
+  height: 320px;
+}
+.small-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(174, 120, 50, 0.5);
+  z-index: 100;
+}
+
+.x-detail-box-left-img img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+.x-detail-box-left ul {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+.x-detail-box-left li {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+.x-detail-box-left li:nth-child(1) {
+  background: url("http://static.bshare.cn/frame/images/logos/s4/weixin.png")
+    no-repeat;
+}
+.x-detail-box-left li:nth-child(2) {
+  background: url("../../assets/img/top_logos_sprite.png") no-repeat 0 -216px;
+}
+.x-detail-box-left li:nth-child(3) {
+  background: url("../../assets/img/top_logos_sprite.png") no-repeat 0 -234px;
+}
+.x-detail-box-left li:nth-child(4) {
+  background: url("../../assets/img/top_logos_sprite.png") no-repeat 0 -270px;
+}
+.x-detail-box-left li:nth-child(5) {
+  background: url(http://static.bshare.cn/frame/images/logos/s4/more-style-addthis.png)
+    no-repeat;
+}
+.x-detail-box-right {
+  position: relative;
+  width: 770px;
+}
+.show-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.showImg {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 840px;
+  height: 640px;
+}
+.showImg img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+.x-detail-box-right b {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  font-size: 18px;
+}
+.x-detail-box-right p {
+  margin-top: 10px;
+  line-height: 36px;
+  background-color: #f9f9f9;
+  color: #666666;
+}
+//产品说明
+.description-of-products {
+  width: 100%;
+}
+.products-top {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 5px;
+  font-size: 14px;
+  color: #444;
+  background-color: #f7f7f7;
+  margin-bottom: 10px;
+}
+.products-bom {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #f7f7f7;
+  box-sizing: border-box;
+}
+
+// 相关产品
+.related-products {
+  width: 100%;
+}
+.related-top {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 5px;
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed gray;
+}
+.related-bom {
+  width: 100%;
+}
+.lbt-box-img {
+  position: relative;
+  height: 220px;
+}
+.lbt-box-img img {
+  height: 220px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.lbt-box p {
+  text-align: center;
+  line-height: 40px;
+}
+</style>
