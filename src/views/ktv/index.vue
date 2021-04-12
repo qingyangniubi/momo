@@ -231,7 +231,6 @@ export default {
 
     this.$axios.get("/index.php/api/journalism/list").then((res) => {
       this.newsQuery = res.data;
-      console.log(res.data);
     });
   },
   animate,

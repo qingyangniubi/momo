@@ -175,29 +175,28 @@
       <div class="footer_main w1200">
         <div class="footer_main_r">
           <h2 style="font-family: 微软雅黑" class="ev-text-title-2">
-            锦缘国际夜总会
+            {{ footer.title }}
           </h2>
           <div class="footer_greeting">
             <p>
-              成都夜总会，成都夜场，成都酒吧各种模特佳丽【13688143752】，设备齐全，装修高端，资源丰富，生意每天开到爆，欢迎随时预定包厢
+              {{ footer.describe }}
             </p>
           </div>
           <div class="footer_msg">
-            <p>咨询电话：13688143752</p>
-            <p>公司地址：高端夜场夜总会</p>
+            <p>咨询电话：{{ footer.phone }}</p>
+            <p>公司地址：{{ footer.address }}</p>
           </div>
         </div>
         <div class="footer_main_l">
           <div class="ev-pic">
-            <img src="@/assets/img/20772430_1609926138.png" alt="" />
+            <img :src="$store.state.imagePath + footer.image" alt="" />
           </div>
           <p>关注加好友更优惠</p>
         </div>
       </div>
       <div class="footer_copy w1200">
         <p>
-          Copyright @ 2021. All rights reserved.高端夜场夜总会 版权所有.
-          京ICP备11058096号
+          {{ footer.record }}
         </p>
       </div>
     </el-footer>
@@ -240,10 +239,15 @@ export default {
       },
       phoneFlag: false,
       formFlag: false,
+      footer: [],
     };
   },
   created: function () {
     this.route = location.hash.substring(1);
+    this.$axios.get("/index.php/api/footer/get").then((res) => {
+      console.log(res);
+      this.footer = res.data;
+    });
   },
   mounted() {
     window.addEventListener("scroll", this.getScroll);
