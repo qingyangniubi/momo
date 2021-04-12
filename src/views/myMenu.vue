@@ -2,10 +2,20 @@
   <!-- 首页 -->
   <el-container>
     <!-- 侧边导航 -->
-    <div class="sidebar">
+    <div class="sidebar" ref="sidebar">
       <div class="onlineList">
-        <em class="online_close" id="onlineClose" title="关闭"></em>
-        <div class="online_open" id="onlineOpen"></div>
+        <em
+          class="online_close"
+          id="onlineClose"
+          title="关闭"
+          @click="clickShow"
+        ></em>
+        <div
+          class="online_open"
+          id="onlineOpen"
+          @mouseover="mouseoverShow"
+          v-show="showFlag"
+        ></div>
         <div id="online_tel_icon" class="online_icon">
           <div class="pic"><img src="../assets/img/online_tel.png" /></div>
           <span class="name">电话直呼</span>
@@ -114,6 +124,7 @@ export default {
     return {
       route: "",
       backTopFlag: false,
+      showFlag: true,
     };
   },
   created: function () {
@@ -123,10 +134,12 @@ export default {
     window.addEventListener("scroll", this.getScroll);
   },
   watch: {
+    // 监听路由改变
     $route: "getPath",
   },
   methods: {
     getScroll() {
+      // 回到顶部按钮是否显示
       var winTop = document.documentElement.scrollTop;
       if (winTop > 150) {
         this.backTopFlag = true;
@@ -135,6 +148,7 @@ export default {
       }
     },
     getPath() {
+      // 路由改变导航栏高亮显示跟随改变
       switch (this.$route.path) {
         case "/index":
           this.route = this.$route.path;
@@ -160,7 +174,30 @@ export default {
           break;
       }
     },
-    backTop() {},
+    backTop() {
+      // 回到顶部
+      var timer = setInterval(function () {
+        var x = document.body.scrollTop || document.documentElement.scrollTop;
+        var juli = (0 - x) / 10;
+        juli = juli > 0 ? Math.ceil(juli) : Math.floor(juli);
+        if (x <= 0) {
+          clearInterval(timer);
+        } else {
+          window.scroll(0, x + juli);
+        }
+      }, 20);
+    },
+    mouseoverShow() {
+      // 侧边栏移入显示
+      this.showFlag = false;
+      this.$refs.sidebar.style.right = 0;
+    },
+
+    clickShow() {
+      // 侧边栏点击隐藏
+      this.$refs.sidebar.style.right = "-100px";
+      this.showFlag = true;
+    },
   },
 };
 </script>

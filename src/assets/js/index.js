@@ -23,8 +23,8 @@ let setAnimated = function setAnimated() {
     if (scrolltop >= $(".j-top").offset().top - h - 50) {
         $(".j-top").show();
     }
-    if (scrolltop >= $(".j-private").offset().top - h - 50) {
-        $(".j-private").addClass("fadeInLeftBig");
+    if (scrolltop >= $(".j-private-idx").offset().top - h - 50) {
+        $(".j-private-idx").addClass("fadeInLeftBig");
     }
 
     if (scrolltop >= $(".j-international").offset().top - h + 50) {
