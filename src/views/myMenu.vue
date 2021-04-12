@@ -16,13 +16,98 @@
           @mouseover="mouseoverShow"
           v-show="showFlag"
         ></div>
-        <div id="online_tel_icon" class="online_icon">
+        <div
+          id="online_tel_icon"
+          class="online_icon"
+          @click="
+            phoneFlag = true;
+            formFlag = false;
+          "
+        >
           <div class="pic"><img src="../assets/img/online_tel.png" /></div>
           <span class="name">电话直呼</span>
+          <div class="pop-up contact" v-show="phoneFlag">
+            <div class="arrows"></div>
+            <dl>
+              <dt>联系我们:</dt>
+              <dd>136684654</dd>
+            </dl>
+            <div class="shut" @click.stop="phoneFlag = false"></div>
+          </div>
         </div>
-        <div id="online_message_icon" class="online_icon">
+        <div
+          id="online_message_icon"
+          class="online_icon"
+          @click="
+            formFlag = true;
+            phoneFlag = false;
+          "
+        >
           <div class="pic"><img src="../assets/img/online_message.png" /></div>
           <span class="name">在线留言</span>
+          <div class="pop-up pop-up-form" v-show="formFlag">
+            <div class="arrows"></div>
+            <el-form
+              :model="form"
+              :rules="rules"
+              ref="numberValidateForm"
+              label-width="75px"
+              class="leaveWordForm"
+              inline-message
+            >
+              <el-input
+                type="textarea"
+                maxlength="50"
+                placeholder="您好，如果您对我公司产品感兴趣，请点些留言，谢谢!(限50个汉字)"
+                show-word-limit
+                v-model="form.textarea"
+              ></el-input>
+              <el-form-item
+                label="您的姓名:"
+                prop="name"
+                :rules="[
+                  { required: true, message: '请输入姓名', trigger: 'blur' },
+                  { min: 2, message: '长度在2个字符以上', trigger: 'blur' },
+                ]"
+              >
+                <el-input
+                  v-model="form.name"
+                  placeholder="请输入您的姓名"
+                ></el-input>
+              </el-form-item>
+              <el-form-item
+                prop="email"
+                label="您的邮箱:"
+                :rules="[
+                  {
+                    required: true,
+                    message: '请输入邮箱地址',
+                    trigger: 'blur',
+                  },
+                  {
+                    type: 'email',
+                    message: '请输入正确的邮箱地址',
+                    trigger: ['blur', 'change'],
+                  },
+                ]"
+              >
+                <el-input
+                  v-model="form.email"
+                  placeholder="请输入您的邮箱"
+                ></el-input>
+              </el-form-item>
+              <el-form-item label="您的电话:" prop="phone">
+                <el-input
+                  type="phone"
+                  v-model.number="form.phone"
+                  autocomplete="off"
+                  placeholder="请输入您的电话"
+                ></el-input>
+              </el-form-item>
+              <el-button type="primary" @click="onSubmit">提交</el-button>
+            </el-form>
+            <div class="shut" @click.stop="formFlag = false"></div>
+          </div>
         </div>
         <div id="online_email_icon" class="online_icon">
           <div class="pic">
@@ -121,10 +206,40 @@
 <script>
 export default {
   data() {
+    var checkPhone = (rule, value, callback) => {
+      const phoneReg = /^1[3|4|5|7|8][0-9]{9}$/;
+      if (!value) {
+        return callback(new Error("电话号码不能为空"));
+      }
+      setTimeout(() => {
+        // Number.isInteger是es6验证数字是否为整数的方法,但是我实际用的时候输入的数字总是识别成字符串
+        // 所以我就在前面加了一个+实现隐式转换
+        if (!Number.isInteger(+value)) {
+          callback(new Error("请输入数字值"));
+        } else {
+          if (phoneReg.test(value)) {
+            callback();
+          } else {
+            callback(new Error("电话号码格式不正确"));
+          }
+        }
+      }, 100);
+    };
     return {
       route: "",
       backTopFlag: false,
       showFlag: true,
+      form: {
+        textarea: "",
+        name: "",
+        email: "",
+        phone: "",
+      },
+      rules: {
+        phone: [{ validator: checkPhone, trigger: ["blur", "change"] }],
+      },
+      phoneFlag: false,
+      formFlag: false,
     };
   },
   created: function () {
@@ -138,6 +253,9 @@ export default {
     $route: "getPath",
   },
   methods: {
+    onSubmit() {
+      // 提交留言
+    },
     getScroll() {
       // 回到顶部按钮是否显示
       var winTop = document.documentElement.scrollTop;

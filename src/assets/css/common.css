@@ -189,13 +189,124 @@ header {
     font-size: 14px;
     color: #000;
     letter-spacing: normal;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border-radius: 5px;
     padding: 5px 0 0;
-    cursor: pointer;
     text-align: center;
     font-weight: 600;
+    position: relative;
  }
+
+.online_icon .pic {
+    margin: 0 auto;
+    width: 61px;
+    height: 61px;
+}
+
+.pop-up {
+    padding: 10px;
+    background-color: #f1f1f1;
+    position: absolute;
+    left: -265px;
+    top: 50%;
+    border-radius: 10px;
+    transform: translateY(-50%);
+    box-shadow: inset 0 0 3px 2px #d8d8d8;
+}
+
+.pop-up-form {
+    left: -395px;
+    width: 350px;
+    box-sizing: border-box;
+}
+
+.contact {
+    width: 200px;
+}
+
+.pop-up dl  {
+    text-align: left;
+    font-size: 14px;
+}
+
+.pop-up dl dt {
+    line-height: 30px;
+}
+
+.pop-up dl dd {
+    line-height: 24px;
+}
+
+.pop-up .shut {
+    background-image: url("../img/online_service.png");
+    background-repeat: no-repeat;
+    background-position: -68px 0px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.pop-up .arrows {
+    width: 34px;
+    height: 36px;
+    background-image: url("../img/online_service.png");
+    background-position: -10px 0px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    right: -34px;
+    margin-top: -18px;
+}
+
+.pop-up .leaveWordForm {
+    margin-top: 15px;
+}
+
+.leaveWordForm p {
+    font-size: 12px;
+    text-align: right;
+    line-height: 30px;
+}
+
+.leaveWordForm  .el-textarea {
+    margin-bottom: 10px;
+}
+
+
+.leaveWordForm .el-textarea__inner {
+    width: 325px;
+    height: 80px;
+    resize:none;
+}
+
+.pop-up-form .el-form-item__label {
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.pop-up-form .el-form-item {
+    margin-bottom: 15px;
+}
+
+.pop-up-form .el-form-item__content .el-input__inner{
+        padding: 0 10px;
+}
+.pop-up-form .el-form-item__content .el-input__inner,
+.pop-up-form .el-form-item__content .el-input {
+    height: 25px;
+    line-height: 25px;
+    width: 160px;
+}
+
+.pop-up-form .el-form-item__content {
+    display: flex;
+    height: 25px;
+    line-height: 25px;
+}
 /* ---------------------- 侧边导航栏 end ---------------------- */
 
 

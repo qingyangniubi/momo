@@ -136,6 +136,6 @@
     </div>
   </div>
 </template>
-<style>
+<style scoped>
 @import "~@/assets/css/contact_us.css";
 </style>
