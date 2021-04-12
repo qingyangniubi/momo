@@ -38,15 +38,15 @@
       </div>
       <div class="j-private">
         <ul class="clearfix">
-          <li>
+          <li @click="onClickList">
             <img src="@/assets/img/image_12.jpeg" alt="" />
             <span>成都夜总会</span>
           </li>
-          <li>
+          <li  @click="onClickList">
             <img src="@/assets/img/image_7.jpeg" alt="" />
             <span>成都市场</span>
           </li>
-          <li>
+          <li  @click="onClickList">
             <img src="@/assets/img/image_13.jpeg" alt="" />
             <span>成都酒吧</span>
           </li>

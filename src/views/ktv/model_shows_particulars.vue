@@ -175,7 +175,8 @@ export default {
     },
     //移动小盒子
     onMouseMoveSmall(e) {
-      var max = this.$refs.big.offsetHeight - this.$refs.small.offsetWidth;
+      var maxY = this.$refs.big.offsetHeight - this.$refs.small.offsetHeight;
+      var maxX = this.$refs.big.offsetWidth - this.$refs.small.offsetWidth;
       var min = 0;
 
       //获取小盒子到顶部和左边的距离
@@ -192,14 +193,14 @@ export default {
       var y = smallY - sY - smallH;
       if (x < min) {
         x = min;
-      } else if (x > max) {
-        x = max;
+      } else if (x > maxX) {
+        x = maxX;
       }
 
       if (y < min) {
         y = min;
-      } else if (y > max) {
-        y = max;
+      } else if (y > maxY) {
+        y = maxY;
       }
       this.$refs.small.style.left = x + "px";
       this.$refs.small.style.top = y + "px";
@@ -425,9 +426,9 @@ li {
 }
 .glass-left {
   position: relative;
-  width: 400px;
+  width: 320px;
   height: 400px;
-  border: 1px solid #3b5fcb;
+  // border: 1px solid #3b5fcb;
 }
 .glass-left .coating {
   position: absolute;
@@ -439,7 +440,8 @@ li {
   z-index: 100;
 }
 .glass-left img {
-  // height: 100%;
+  height: 100%;
+  width: 100%;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -451,19 +453,18 @@ li {
   top: 0;
   width: 300px;
   height: 300px;
-  background-color: rgb(226, 225, 225);
   overflow: hidden;
 }
 .showImg {
   position: absolute;
   left: 0;
   top: 0;
-  width: 800px;
+  width: 640px;
   height: 800px;
 }
 .showImg img {
-  width: 600px;
-  height: 800px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   left: 50%;
   top: 50%;
