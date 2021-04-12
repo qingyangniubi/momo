@@ -14,7 +14,7 @@ Vue.config.productionTip = false;
 import VueLazyload from 'vue-lazyload';
 Vue.use(VueLazyload);
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')

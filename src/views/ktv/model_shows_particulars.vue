@@ -34,7 +34,7 @@
         <a >高端模特</a>
       </el-breadcrumb-item>
       <el-breadcrumb-item>
-        <a href="#">成都夜总会模特</a>
+        <a href="#">长沙夜总会模特</a>
       </el-breadcrumb-item>
     </el-breadcrumb>
 
@@ -162,7 +162,7 @@ export default {
       }
     },
     onClickdata(item, index) {
-      console.log(item, index);
+      // console.log(item, index);
       this.modelDataList = item;
     },
     //移入事件

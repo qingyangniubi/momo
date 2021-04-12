@@ -45,9 +45,6 @@ let setAnimated = function setAnimated() {
     if (scrolltop >= $(".j-slideInLeft").offset().top - h - 50) {
         $(".j-slideInLeft").addClass("slideInLeft");
     }
-    if (scrolltop >= $(".j-slideInRight").offset().top - h - 50) {
-        $(".j-slideInRight").addClass("slideInRight");
-    }
 
     if (scrolltop >= $(".j-journalism").offset().top - h - 50) {
         $(".j-journalism-title").addClass("rollIn");

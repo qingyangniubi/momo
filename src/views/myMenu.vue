@@ -266,6 +266,8 @@ export default {
       }
     },
     getPath() {
+      let id = this.$route.params.id;
+      console.log(id);
       // 路由改变导航栏高亮显示跟随改变
       switch (this.$route.path) {
         case "/index":
@@ -275,14 +277,20 @@ export default {
           this.route = this.$route.path;
           break;
         case "/model_shows":
+          console.log(this.$route.path);
           this.route = this.$route.path;
+          break;
+        case "/model/" + id:
+          this.route = "/model_shows";
           break;
         case "/environment_show":
           this.route = this.$route.path;
-
           break;
         case "/evening_news":
           this.route = this.$route.path;
+          break;
+        case "/chengdu_evening/" + id:
+          this.route = "/evening_news";
           break;
         case "/contact_us":
           this.route = this.$route.path;

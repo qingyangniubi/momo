@@ -45,10 +45,10 @@
               <div class="j-magnify">
                 <img src="../../assets/img/image_p1.jpg" alt="" />
               </div>
-              <h3>成都夜总会环境</h3>
+              <h3>长沙夜总会环境</h3>
               <p>联系人：周经理</p>
               <p>手 机：13688143752（微信同号）</p>
-              <p class="j-p10">地 址：成都</p>
+              <p class="j-p10">地 址：长沙</p>
               <div class="j-align">
                 <div class="j-align-left">
                   <img v-lazy="require('../../assets/img/icon_1.png')" alt="" />
@@ -66,10 +66,10 @@
               <div class="j-magnify">
                 <img src="../../assets/img/image_7.jpeg" alt="" />
               </div>
-              <h3>成都夜场环境</h3>
+              <h3>长沙夜场环境</h3>
               <p>联系人：周经理</p>
               <p>手 机：13688143752（微信同号）</p>
-              <p class="j-p10">地 址：成都</p>
+              <p class="j-p10">地 址：长沙</p>
               <div class="j-align">
                 <div class="j-align-left">
                   <img v-lazy="require('../../assets/img/icon_1.png')" alt="" />
@@ -87,10 +87,10 @@
               <div class="j-magnify">
                 <img src="../../assets/img/image_p2.jpeg" alt="" />
               </div>
-              <h3>成都酒吧环境</h3>
+              <h3>长沙酒吧环境</h3>
               <p>联系人：周经理</p>
               <p>手 机：13688143752（微信同号）</p>
-              <p class="j-p10">地 址：成都</p>
+              <p class="j-p10">地 址：长沙</p>
               <div class="j-align">
                 <div class="j-align-left">
                   <img v-lazy="require('../../assets/img/icon_1.png')" alt="" />
@@ -106,8 +106,8 @@
             </li>
           </ul>
         </div>
-        <div class="j-examine">
-          <a href="">查看更多</a>
+        <div class="j-examine" @click="$router.push('/environment_show')">
+          <a href="javascript:;">查看更多</a>
         </div>
       </div>
     </div>
@@ -123,9 +123,11 @@
             </div>
             <h2 class="animated j-rotateIn" id="dowebok">锦缘国际夜总会</h2>
             <p class="p-play animated" id="dowebok">
-              成都夜总会，成都夜场，成都酒吧各种模特佳丽【13688143752】，设备齐<br />全，装修高端，资源丰富，生意每天开到爆，欢迎随时预定包厢
+              长沙夜总会，长沙夜场，长沙酒吧各种模特佳丽【13688143752】，设备齐<br />全，装修高端，资源丰富，生意每天开到爆，欢迎随时预定包厢
             </p>
-            <a href="">了解详情</a>
+            <a href="javascript:;" @click="$router.push('/about_us')"
+              >了解详情</a
+            >
           </div>
         </div>
       </div>
@@ -142,60 +144,15 @@
         <div class="j-inner">
           <div class="animated j-slideInLeft" id="dowebok">
             <ul>
-              <li>
+              <li
+                v-for="(k, i) in modelData"
+                :key="i"
+                @click="$router.push('/model/' + k.id)"
+              >
                 <div class="j-scale-1">
-                  <img v-lazy="require('../../assets/img/bell_1.jpg')" alt="" />
+                  <img :src="$store.state.imagePath + k.image" alt="" />
                 </div>
-                <p>成都夜总会模特</p>
-              </li>
-              <li>
-                <div class="j-scale-1">
-                  <img
-                    v-lazy="require('../../assets/img/belle_2.jpg')"
-                    alt=""
-                  />
-                </div>
-                <p>成都夜场模特</p>
-              </li>
-              <li>
-                <div class="j-scale-1">
-                  <img
-                    v-lazy="require('../../assets/img/belle_3.jpg')"
-                    alt=""
-                  />
-                </div>
-                <p>成都酒吧模特</p>
-              </li>
-            </ul>
-          </div>
-          <div class="animated j-slideInRight" id="dowebok">
-            <ul>
-              <li>
-                <div class="j-scale-1">
-                  <img
-                    v-lazy="require('../../assets/img/belle_4.jpg')"
-                    alt=""
-                  />
-                </div>
-                <p>成都夜总会模特</p>
-              </li>
-              <li>
-                <div class="j-scale-1">
-                  <img
-                    v-lazy="require('../../assets/img/belle_5.jpg')"
-                    alt=""
-                  />
-                </div>
-                <p>成都夜场模特</p>
-              </li>
-              <li>
-                <div class="j-scale-1">
-                  <img
-                    v-lazy="require('../../assets/img/belle_6.jpg')"
-                    alt=""
-                  />
-                </div>
-                <p>成都酒吧模特</p>
+                <p>{{ k.title }}</p>
               </li>
             </ul>
           </div>
@@ -213,69 +170,24 @@
           <div class="j-hr"></div>
         </div>
         <div class="j-play-item">
-          <div class="j-img-left animated" id="dowebok">
+          <div class="j-img-left animated" id="dowebok" @click="$router.push('/evening_news')">
             <img v-lazy="require('../../assets/img/image-110.jpeg')" alt="" />
           </div>
           <div class="j-right animated" id="dowebok">
-            <div class="j-right-1 j-great">
+            <div class="j-right-1 j-great" v-for="(k, i) in newsQuery" :key="i">
               <div class="j-doraem">
-                <div class="j-image-play">
-                  <img v-lazy="require('../../assets/img/img-1.png')" alt="" />
+                <div class="j-image-play j-img-bottom" @click="$router.push('/chengdu_evening/'+k.id)">
+                  <img :src="$store.state.imagePath + k.image" alt="" />
                 </div>
                 <div class="j-divs j-model">
                   <i></i>
-                  <h3>夜总会招聘模特条件改掉这些习惯</h3>
+                  <h3>{{ k.title }}</h3>
                   <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;夜总会模特丰厚的薪资，总会吸引着无数青春靓的女孩前来应聘，当然，这些青春靓丽的女孩儿在应聘之前，心中也会有一丝忧虑，总担心自己无法胜任这份工作，无法应聘成功
+                    {{ k.content }}
                   </p>
                 </div>
               </div>
-              <span>2018-08-23</span>
-            </div>
-            <div class="j-right-1 j-great">
-              <div class="j-doraem">
-                <div class="j-image-play">
-                  <img v-lazy="require('../../assets/img/img-1.png')" alt="" />
-                </div>
-                <div class="j-divs j-model">
-                  <i></i>
-                  <h3>夜总会招聘模特条件改掉这些习惯</h3>
-                  <p>
-                    夜总会模特丰厚的薪资，总会吸引着无数青春靓的女孩前来应聘，当然，这些青春靓丽的女孩儿在应聘之前，心中也会有一丝忧虑，总担心自己无法胜任这份工作，无法应聘成功
-                  </p>
-                </div>
-              </div>
-              <span>2018-08-23</span>
-            </div>
-            <div class="j-right-1 j-great">
-              <div class="j-doraem">
-                <div class="j-image-play">
-                  <img v-lazy="require('../../assets/img/img-1.png')" alt="" />
-                </div>
-                <div class="j-divs j-model">
-                  <i></i>
-                  <h3>夜场模特说话技巧如何打动面试官</h3>
-                  <p>
-                    夜场是很多女孩儿的梦想摇篮，女孩的很多梦想都可以在这个摇篮中实现，所以越来越多的女孩都想在夜场工作，毕竟在这里可以赚取她们想要的工资，这里可以让她们过上，她
-                  </p>
-                </div>
-              </div>
-              <span>2018-08-23</span>
-            </div>
-            <div class="j-right-1 j-great">
-              <div class="j-doraem">
-                <div class="j-image-play j-img-bottom">
-                  <img v-lazy="require('../../assets/img/img-2.png')" alt="" />
-                </div>
-                <div class="j-divs j-model">
-                  <i></i>
-                  <h3>夜场招聘找不到工作原因不同类型面试</h3>
-                  <p>
-                    之所以现在有很多应届毕业生他们会找不到工作，主要是因为他们不知道到底是哪一些原因促成大学生就业难，所以没有办法针对性，结合自我的实际情况去调整，那么，大学生
-                  </p>
-                </div>
-              </div>
-              <span>2018-08-23</span>
+              <span>{{ k.time }}</span>
             </div>
           </div>
         </div>
@@ -294,11 +206,14 @@ export default {
           image: "",
         },
       ],
+      modelData: [],
+      newsQuery: [],
     };
   },
   created() {
     window.onscroll = animate.setAnimated;
     const url = "/index.php/api/carousel_map/list";
+
     this.$axios
       .get(url)
       .then((response) => {
@@ -307,6 +222,17 @@ export default {
       .catch(function (error) {
         console.log(error);
       });
+
+    this.$axios.get("/index.php/api/models/list").then((response) => {
+      if (response.status == 200 && response.statusText == "OK") {
+        this.modelData = response.data;
+      }
+    });
+
+    this.$axios.get("/index.php/api/journalism/list").then((res) => {
+      this.newsQuery = res.data;
+      console.log(res.data);
+    });
   },
   animate,
   destroyed() {

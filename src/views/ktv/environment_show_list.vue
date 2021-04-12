@@ -35,7 +35,7 @@
         <a>高端模特</a>
       </el-breadcrumb-item>
       <el-breadcrumb-item>
-        <a href="#">成都夜总会模特</a>
+        <a href="#">长沙夜总会模特</a>
       </el-breadcrumb-item>
     </el-breadcrumb>
 
@@ -67,7 +67,7 @@
               <img src="../../assets/img/20771746_1609919598.jpeg" alt />
             </div>
           </div>
-          <b>成都夜总会</b>
+          <b>长沙夜总会</b>
           <p>暂无价格</p>
         </div>
       </div>
@@ -90,7 +90,7 @@
                   <div class="lbt-box-img">
                     <img src="../../assets/img/20771746_1609919598.jpeg" alt />
                   </div>
-                  <p>成都酒吧</p>
+                  <p>长沙酒吧</p>
                 </div>
               </a>
             </el-carousel-item>
@@ -100,7 +100,7 @@
                   <div class="lbt-box-img">
                     <img src="../../assets/img/20771746_1609919598.jpeg" alt />
                   </div>
-                  <p>成都酒吧</p>
+                  <p>长沙酒吧</p>
                 </div>
               </a>
             </el-carousel-item>
@@ -110,7 +110,7 @@
                   <div class="lbt-box-img">
                     <img src="../../assets/img/20771746_1609919598.jpeg" alt />
                   </div>
-                  <p>成都酒吧</p>
+                  <p>长沙酒吧</p>
                 </div>
               </a>
             </el-carousel-item>

@@ -328,3 +328,66 @@ header {
     border-radius: 8px;
     z-index: 50;
 }
+
+
+.online_close {
+    background-image: url("../img/online_service.png");
+    background-repeat: no-repeat;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-position: -68px -16px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.online_open {
+    background-image: url("../img/online_service.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 146px;
+    background-position: 0 -39px;
+    position: absolute;
+    left: -35px;
+    top: 35%;
+    overflow: hidden;
+    cursor: pointer;
+    display: block;
+}
+
+.online_icon {
+    font-size: 14px;
+    color: #000;
+    letter-spacing: normal;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 5px 0 0;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+/* ---------------------- 侧边导航栏 end ---------------------- */
+
+
+/* 回到顶部 */
+
+.backTop_Z {
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #444;
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    width: 60px;
+    height: 60px;
+    background: transparent url("../img/back_top_Z.png") no-repeat center;
+    outline: 0;
+    opacity: .9;
+    border-radius: 8px;
+    z-index: 50;
+}
