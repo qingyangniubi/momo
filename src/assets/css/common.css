@@ -66,6 +66,7 @@ header {
     height: 22px;
 }
 
+
 /* .el-menu.el-menu--horizontal  */
 
 
@@ -135,7 +136,9 @@ header {
 
 /* ---------------------- 尾部end ---------------------- */
 
+
 /* ---------------------- 侧边导航栏 ---------------------- */
+
 .sidebar {
     font-size: 12px;
     position: fixed;
@@ -145,7 +148,7 @@ header {
     box-sizing: border-box;
     right: -100px;
     top: 50%;
-    transform:translateY(-50%);
+    transform: translateY(-50%);
     z-index: 99;
     color: #000;
     background: #f1f1f1;
@@ -156,8 +159,8 @@ header {
 
 .onlineList {
     padding: 20px 1px 1px;
-
 }
+
 .online_close {
     background-image: url("../img/online_service.png");
     background-repeat: no-repeat;
@@ -171,7 +174,7 @@ header {
     cursor: pointer;
 }
 
-.online_open{
+.online_open {
     background-image: url("../img/online_service.png");
     background-repeat: no-repeat;
     width: 35px;
@@ -195,13 +198,15 @@ header {
     cursor: pointer;
     text-align: center;
     font-weight: 600;
- }
+}
+
+
 /* ---------------------- 侧边导航栏 end ---------------------- */
 
 
 /* 回到顶部 */
 
-.backTop_Z{
+.backTop_Z {
     font-size: 12px;
     text-decoration: none;
     cursor: pointer;
