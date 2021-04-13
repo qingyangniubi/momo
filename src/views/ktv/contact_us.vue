@@ -21,7 +21,7 @@
             <li>
               <router-link to="/about_us">{{ listData1.title }}</router-link>
             </li>
-            <li  class="point">
+            <li class="point">
               <router-link to="/contact_us">{{ listData2.title }}</router-link>
             </li>
             <li>
@@ -32,9 +32,9 @@
           </ul>
           <div class="box animate__animated animate__bounceInUp">
             <div id="items" class="items-center">
-              <h1>{{ listData2.title }}</h1>
-              <pre>{{ listData1.content }}</pre>
-              <img :src="$store.state.imagePath+imgSrc" alt="" />
+              <h1>{{ listData1.title }}</h1>
+              <pre>{{ listData2.content | uppre }}</pre>
+              <img :src="$store.state.imagePath + imgSrc" alt="" />
             </div>
           </div>
         </div>
@@ -46,23 +46,35 @@
 export default {
   data() {
     return {
-      listData1:[],
-      listData2:[],
-      listData3:[],
-      imgSrc:''
+      listData1: [],
+      listData2: [],
+      listData3: [],
+      imgSrc: ""
+    };
+  },
+  filters: {
+    uppre: function(val) {
+      let arr = [...val];
+      let start = val.indexOf("![输入图片说明]");
+      let str = arr.splice(start);
+      str;
+      return arr.join("");
     }
   },
   created() {
-    this.$axios.get('/index.php/api/about_us/list').then((res)=>{
-        console.log(res.data);
-        this.listData1=res.data[0];
-        this.listData2=res.data[1];
-        this.listData3=res.data[2];
-        let str=this.listData2.content;
-        this.imgSrc=str.substring(str.indexOf('(')+1,str.indexOf('.bmp')+4);
-        console.log(this.imgSrc);
+    this.$axios.get("/index.php/api/about_us/list").then(res => {
+      console.log(res.data);
+      this.listData1 = res.data[0];
+      this.listData2 = res.data[1];
+      this.listData3 = res.data[2];
+      let str = this.listData2.content;
+      this.imgSrc = str.substring(
+        str.indexOf("(") + 1,
+        str.indexOf(".bmp") + 4
+      );
+      console.log(this.imgSrc);
     });
-  },
+  }
 };
 </script>
 <style scoped>

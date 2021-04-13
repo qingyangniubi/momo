@@ -32,8 +32,8 @@
             class="box animate__animated animate__animated animate__fadeInRight"
           >
            <div id="items" class="items-bottom">
-              <h1>{{listData3.title}}</h1>
-              <pre>{{listData1.content}}</pre>
+              <h1>{{listData1.title}}</h1>
+              <pre>{{listData3.content}}</pre>
             </div>
           </div>
         </div>
