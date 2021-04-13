@@ -52,6 +52,15 @@ export default {
       imgSrc: "",
     };
   },
+  filters: {
+    uppre: function (val) {
+      let arr = [...val];
+      let start = val.indexOf("![输入图片说明]");
+      let str = arr.splice(start);
+      str;
+      return arr.join("");
+    },
+  },
   created() {
     this.$axios.get("/index.php/api/about_us/list").then((res) => {
       console.log(res.data);

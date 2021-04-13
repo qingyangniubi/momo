@@ -62,6 +62,6 @@ export default {
       this.listData2 = res.data[1];
       this.listData3 = res.data[2];
     });
-  },
+  }
 };
 </script>
