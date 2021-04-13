@@ -5,17 +5,16 @@
     <div class="j-banner">
       <div class="j-banner-image">
         <img
-          :src="$store.state.imagePath + bgImgArr[0].image"
+          v-if="$store.state.bannerFlag"
+          :src="$store.state.imagePath + $store.state.bannerData[0].image"
           alt=""
           class="j-b-i"
         />
         <div class="j-introduce w1200">
-          <div class="j-product">
+          <div class="j-product" v-if="$store.state.bannerFlag">
             <h3>
-              全场所有啤酒均可享受买二送一，还有更多豪礼等着你!
-              <br />当晚本包间消费满6666以上，当晚可赠送豪华名宿酒店一套，限当天使用。
+              {{ $store.state.bannerData[0].content }}
             </h3>
-            <p>小包低消1080元 中包低消1280 大包低消1380 豪包低消2680</p>
           </div>
           <div class="j-code">
             <img v-lazy="require('../../assets/img/image_2.png')" alt="" />
@@ -41,56 +40,18 @@
         </div>
         <div class="j-private-idx animated" id="dowebok">
           <ul>
-            <li>
+            <li
+              v-for="item in environmentData"
+              :key="item.id"
+              @click="$router.push('/environment_show_list')"
+            >
               <div class="j-magnify">
-                <img src="../../assets/img/image_p1.jpg" alt="" />
+                <img :src="$store.state.imagePath + item.image" alt="" />
               </div>
-              <h3>长沙夜总会环境</h3>
-              <p>联系人：周经理</p>
-              <p>手 机：13688143752（微信同号）</p>
-              <p class="j-p10">地 址：长沙</p>
-              <div class="j-align">
-                <div class="j-align-left">
-                  <img v-lazy="require('../../assets/img/icon_1.png')" alt="" />
-                  <span>：夜场模特</span>
-                </div>
-                <div class="j-align-right">
-                  <img
-                    v-lazy="require('../../assets/img/icon_2.png')"
-                    alt=""
-                  /><span>：1203人</span>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="j-magnify">
-                <img src="../../assets/img/image_7.jpeg" alt="" />
-              </div>
-              <h3>长沙夜场环境</h3>
-              <p>联系人：周经理</p>
-              <p>手 机：13688143752（微信同号）</p>
-              <p class="j-p10">地 址：长沙</p>
-              <div class="j-align">
-                <div class="j-align-left">
-                  <img v-lazy="require('../../assets/img/icon_1.png')" alt="" />
-                  <span>：夜场模特</span>
-                </div>
-                <div class="j-align-right">
-                  <img
-                    v-lazy="require('../../assets/img/icon_2.png')"
-                    alt=""
-                  /><span>：1203人</span>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="j-magnify">
-                <img src="../../assets/img/image_p2.jpeg" alt="" />
-              </div>
-              <h3>长沙酒吧环境</h3>
-              <p>联系人：周经理</p>
-              <p>手 机：13688143752（微信同号）</p>
-              <p class="j-p10">地 址：长沙</p>
+              <h3>{{ item.title }}</h3>
+              <p>联系人：{{ item.contacts }}</p>
+              <p>手 机：{{ item.phone }}</p>
+              <p class="j-p10">地 址： {{ item.address }}</p>
               <div class="j-align">
                 <div class="j-align-left">
                   <img v-lazy="require('../../assets/img/icon_1.png')" alt="" />
@@ -170,18 +131,27 @@
           <div class="j-hr"></div>
         </div>
         <div class="j-play-item">
-          <div class="j-img-left animated" id="dowebok" @click="$router.push('/evening_news')">
+          <div
+            class="j-img-left animated"
+            id="dowebok"
+            @click="$router.push('/evening_news')"
+          >
             <img v-lazy="require('../../assets/img/image-110.jpeg')" alt="" />
           </div>
           <div class="j-right animated" id="dowebok">
             <div class="j-right-1 j-great" v-for="(k, i) in newsQuery" :key="i">
               <div class="j-doraem">
-                <div class="j-image-play j-img-bottom" @click="$router.push('/chengdu_evening/'+k.id)">
+                <div
+                  class="j-image-play j-img-bottom"
+                  @click="$router.push('/chengdu_evening/' + k.id)"
+                >
                   <img :src="$store.state.imagePath + k.image" alt="" />
                 </div>
                 <div class="j-divs j-model">
                   <i></i>
-                  <h3>{{ k.title }}</h3>
+                  <h3 @click="$router.push('/chengdu_evening/' + k.id)">
+                    {{ k.title }}
+                  </h3>
                   <p>
                     {{ k.content }}
                   </p>
@@ -201,36 +171,44 @@ import animate from "../../assets/js/index";
 export default {
   data() {
     return {
-      bgImgArr: [
-        {
-          image: "",
-        },
-      ],
-      modelData: [],
-      newsQuery: [],
+      modelData: [], // 模特数据
+      newsQuery: [], // 新闻数据
+      environmentData: [], // 环境数据
     };
   },
   created() {
     window.onscroll = animate.setAnimated;
-    const url = "/index.php/api/carousel_map/list";
-
+    // 背景
+    // const url = "";
     this.$axios
-      .get(url)
+      .get("/index.php/api/carousel_map/list")
       .then((response) => {
-        this.bgImgArr = response.data;
+        if (response.status == 200 && response.statusText == "OK") {
+          this.$store.state.bannerData = response.data;
+          this.$store.state.bannerFlag = true;
+        }
       })
       .catch(function (error) {
         console.log(error);
       });
 
+    //模特
     this.$axios.get("/index.php/api/models/list").then((response) => {
       if (response.status == 200 && response.statusText == "OK") {
         this.modelData = response.data;
       }
     });
 
+    // 新闻
     this.$axios.get("/index.php/api/journalism/list").then((res) => {
       this.newsQuery = res.data;
+    });
+
+    // 环境
+    this.$axios.get("/index.php/api/ambient/list").then((res) => {
+      if (res.status == 200 && res.statusText == "OK") {
+        this.environmentData = res.data;
+      }
     });
   },
   animate,
@@ -239,7 +217,7 @@ export default {
   },
 };
 </script>
-<style scoped>
-@import "~@/assets/css/animate.min.css";
-@import "~@/assets/css/index.css";
+<style scoped src="@/assets/css/animate.min.css">
+</style>
+<style scoped src="@/assets/css/index.css">
 </style>

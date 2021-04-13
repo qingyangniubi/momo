@@ -275,6 +275,9 @@ header {
     margin-bottom: 10px;
 }
 
+.pop-up-form .el-form-item:first-child .el-form-item__content {
+    margin: 0 !important;
+}
 
 .leaveWordForm .el-textarea__inner {
     width: 325px;
@@ -289,20 +292,20 @@ header {
 }
 
 .pop-up-form .el-form-item {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
-.pop-up-form .el-form-item__content .el-input__inner{
+.pop-up-form .el-form-item:nth-child(n+2) .el-form-item__content .el-input__inner{
         padding: 0 10px;
 }
-.pop-up-form .el-form-item__content .el-input__inner,
-.pop-up-form .el-form-item__content .el-input {
+.pop-up-form .el-form-item:nth-child(n+2) .el-form-item__content .el-input__inner,
+.pop-up-form .el-form-item:nth-child(n+2) .el-form-item__content .el-input {
     height: 25px;
     line-height: 25px;
     width: 160px;
 }
 
-.pop-up-form .el-form-item__content {
+.pop-up-form .el-form-item:nth-child(n+2) .el-form-item__content {
     display: flex;
     height: 25px;
     line-height: 25px;

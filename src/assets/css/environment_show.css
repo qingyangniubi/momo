@@ -50,8 +50,12 @@ li {
 .j-banner-image {
     width: 100%;
     height: 600px;
-    background: url("../img/image-10.jpg") no-repeat;
     background-size: 100%;
+}
+
+.j-b-i {
+    width: 100%;
+    height: 100%;
 }
 
 .j-product {
@@ -59,7 +63,8 @@ li {
     width: 803px;
     background-color: rgba(102, 0, 0, .7);
     top: 130px;
-    left: 552px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .j-product h3 {
@@ -102,6 +107,11 @@ li {
     text-align: center;
     color: #fff;
     font-size: 16px;
+    cursor: pointer;
+}
+
+.j-relation:hover {
+    background-color: #c9302c;
 }
 
 .j-cur span {

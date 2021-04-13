@@ -43,6 +43,15 @@ a:hover {
     color: #e33333;
 }
 
+pre{
+    white-space:pre-wrap;/*css-3*/
+    white-space:-moz-pre-wrap;/*Mozilla,since1999*/
+    -space:-pre-wrap;/*Opera4-6*/
+    white-space:-o-pre-wrap;/*Opera7*/
+    word-wrap:break-word;/*InternetExplorer5.5+*/
+    font-size: 16px;
+    color: #212121;
+}
 button,
 input {
     font-family: "Microsoft YaHei", "Heiti SC", tahoma, arial, "Hiragino Sans GB", \\5b8b\4f53, sans-serif;
@@ -148,6 +157,9 @@ textarea {
 
 /* 轮播图   结束 */
 
+.q_items {
+    padding-bottom: 100px !important;
+}
 
 /* 关于我们 */
 
@@ -160,7 +172,7 @@ textarea {
 .regard-center {
     width: 1210px;
     margin: 0 auto;
-    padding-top: 50px;
+    padding: 50px 0 80px;
 }
 
 .regard-left {
@@ -199,19 +211,6 @@ textarea {
     color: #fff;
 }
 
-.items-top {
-    z-index: 30;
-    height: 839px;
-}
-
-.items-center {
-    z-index: 30;
-}
-
-.items-bottom {
-    z-index: 30;
-    height: 1238px;
-}
 
 .box {
     flex: 1;

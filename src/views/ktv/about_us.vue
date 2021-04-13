@@ -18,19 +18,21 @@
             class="list animate__animated animate__bounce animate__bounceInLeft"
           >
             <li class="point">
-              <router-link to="/about_us">{{listData1.title}}</router-link>
+              <router-link to="/about_us">{{ listData1.title }}</router-link>
             </li>
             <li>
-              <router-link to="/contact_us">{{listData2.title}}</router-link>
+              <router-link to="/contact_us">{{ listData2.title }}</router-link>
             </li>
             <li>
-              <router-link to="/recruitment_requirements">{{listData3.title}}</router-link>
+              <router-link to="/recruitment_requirements">{{
+                listData3.title
+              }}</router-link>
             </li>
           </ul>
           <div class="box animate__animated animate__lightSpeedInRight">
-            <div id="items" class="items-top">
-              <h1>{{listData1.title}}</h1>
-                <pre>{{listData1.content}}</pre>
+            <div id="items" class="q_items">
+              <h1>{{ listData1.title }}</h1>
+              <pre>{{ listData1.content }}</pre>
             </div>
           </div>
         </div>
@@ -40,23 +42,25 @@
 </template>
 <style scoped>
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css";
-@import "~@/assets/css/about_us.css";
+</style>
+
+<style scoped src="@/assets/css/about_us.css">
 </style>
 <script>
 export default {
   data() {
     return {
-      listData1:[],
-      listData2:[],
-      listData3:[]
-    }
+      listData1: [],
+      listData2: [],
+      listData3: [],
+    };
   },
   created() {
-    this.$axios.get('/index.php/api/about_us/list').then((res)=>{
-        console.log(res.data);
-        this.listData1=res.data[0];
-        this.listData2=res.data[1];
-        this.listData3=res.data[2];
+    this.$axios.get("/index.php/api/about_us/list").then((res) => {
+      console.log(res.data);
+      this.listData1 = res.data[0];
+      this.listData2 = res.data[1];
+      this.listData3 = res.data[2];
     });
   },
 };

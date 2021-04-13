@@ -29,13 +29,13 @@
     <el-breadcrumb separator-class="el-icon-d-arrow-right">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/environment_show' }">
-        <a>模特展示</a>
+        <a>环境展示</a>
       </el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/environment_show' }">
-        <a>高端模特</a>
+        <a>夜场环境</a>
       </el-breadcrumb-item>
       <el-breadcrumb-item>
-        <a href="#">长沙夜总会模特</a>
+        <a href="#">长沙夜总会 </a>
       </el-breadcrumb-item>
     </el-breadcrumb>
 
@@ -180,7 +180,6 @@ export default {
 
 
 <style scoped lang="less">
-/* banner start */
 * {
   padding: 0;
   margin: 0;
@@ -188,6 +187,8 @@ export default {
 .environment {
   background-color: #fff;
 }
+/* banner start */
+
 .j-banner {
   position: relative;
   width: 100%;
@@ -197,8 +198,12 @@ export default {
 .j-banner-image {
   width: 100%;
   height: 600px;
-  background: url("../../assets/img/image-10.jpg") no-repeat;
   background-size: 100%;
+}
+
+.j-b-i {
+  width: 100%;
+  height: 100%;
 }
 
 .j-product {
@@ -206,7 +211,8 @@ export default {
   width: 803px;
   background-color: rgba(102, 0, 0, 0.7);
   top: 130px;
-  left: 552px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .j-product h3 {
@@ -249,6 +255,11 @@ export default {
   text-align: center;
   color: #fff;
   font-size: 16px;
+  cursor: pointer;
+}
+
+.j-relation:hover {
+  background-color: #c9302c;
 }
 
 .j-cur span {

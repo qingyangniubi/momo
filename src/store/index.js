@@ -7,10 +7,10 @@ export default new Vuex.Store({
   state: {
     imagePath: '//49.235.93.38:82', // 图片域名
     modelData: [], // 模特信息
+    bannerData: [],
+    bannerFlag: false
   },
-  mutations: {
-
-  },
+  mutations: {},
   actions: {},
   modules: {}
 })

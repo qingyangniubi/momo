@@ -44,8 +44,7 @@
     </div>
   </div>
 </template>
-<style scoped>
-@import "../../assets/css/chengdu_evening.css";
+<style scoped src="@/assets/css/chengdu_evening.css">
 </style>
 <script>
 import axios from "axios";

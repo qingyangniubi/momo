@@ -30,7 +30,7 @@
             <div class="arrows"></div>
             <dl>
               <dt>联系我们:</dt>
-              <dd>136684654</dd>
+              <dd>{{ footer.phone }}</dd>
             </dl>
             <div class="shut" @click.stop="phoneFlag = false"></div>
           </div>
@@ -50,47 +50,27 @@
             <el-form
               :model="form"
               :rules="rules"
-              ref="numberValidateForm"
+              ref="form"
               label-width="75px"
               class="leaveWordForm"
-              inline-message
+              hide-required-asterisk
             >
-              <el-input
-                type="textarea"
-                maxlength="50"
-                placeholder="您好，如果您对我公司产品感兴趣，请点些留言，谢谢!(限50个汉字)"
-                show-word-limit
-                v-model="form.textarea"
-              ></el-input>
-              <el-form-item
-                label="您的姓名:"
-                prop="name"
-                :rules="[
-                  { required: true, message: '请输入姓名', trigger: 'blur' },
-                  { min: 2, message: '长度在2个字符以上', trigger: 'blur' },
-                ]"
-              >
+              <el-form-item prop="textarea">
+                <el-input
+                  type="textarea"
+                  maxlength="50"
+                  placeholder="您好，如果您对我公司产品感兴趣，请点些留言，谢谢!(限50个汉字)"
+                  show-word-limit
+                  v-model="form.textarea"
+                ></el-input>
+              </el-form-item>
+              <el-form-item label="您的姓名:" prop="name">
                 <el-input
                   v-model="form.name"
                   placeholder="请输入您的姓名"
                 ></el-input>
               </el-form-item>
-              <el-form-item
-                prop="email"
-                label="您的邮箱:"
-                :rules="[
-                  {
-                    required: true,
-                    message: '请输入邮箱地址',
-                    trigger: 'blur',
-                  },
-                  {
-                    type: 'email',
-                    message: '请输入正确的邮箱地址',
-                    trigger: ['blur', 'change'],
-                  },
-                ]"
-              >
+              <el-form-item prop="email" label="您的邮箱:">
                 <el-input
                   v-model="form.email"
                   placeholder="请输入您的邮箱"
@@ -104,7 +84,9 @@
                   placeholder="请输入您的电话"
                 ></el-input>
               </el-form-item>
-              <el-button type="primary" @click="onSubmit">提交</el-button>
+              <el-button type="primary" @click="onSubmit('form')"
+                >提交</el-button
+              >
             </el-form>
             <div class="shut" @click.stop="formFlag = false"></div>
           </div>
@@ -158,7 +140,7 @@
               >
               <el-menu-item class="li-tel"
                 ><img src="../assets/img/7877635_1538278040.png" alt="" />
-                <span>13688143752 </span>
+                <span>{{ footer.phone }} </span>
               </el-menu-item>
               <div class="line"></div>
             </el-menu>
@@ -235,6 +217,23 @@ export default {
         phone: "",
       },
       rules: {
+        textarea: [{ required: true, message: "请填写留言", trigger: "blur" }],
+        name: [
+          { required: true, message: "请输入姓名", trigger: "blur" },
+          { min: 2, message: "长度在2个字符以上", trigger: "blur" },
+        ],
+        email: [
+          {
+            required: true,
+            message: "请输入邮箱地址",
+            trigger: "blur",
+          },
+          {
+            type: "email",
+            message: "请输入正确的邮箱地址",
+            trigger: ["blur", "change"],
+          },
+        ],
         phone: [{ validator: checkPhone, trigger: ["blur", "change"] }],
       },
       phoneFlag: false,
@@ -245,7 +244,6 @@ export default {
   created: function () {
     this.route = location.hash.substring(1);
     this.$axios.get("/index.php/api/footer/get").then((res) => {
-      console.log(res);
       this.footer = res.data;
     });
   },
@@ -257,8 +255,30 @@ export default {
     $route: "getPath",
   },
   methods: {
-    onSubmit() {
+    onSubmit(formName) {
       // 提交留言
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          this.$axios
+            .get(
+              "http://49.235.93.38:82/index.php/api/leaving_message/add?name=" +
+                this.form.name +
+                "&email=" +
+                this.form.email +
+                "&phone=" +
+                this.form +
+                "&content=" +
+                this.form.textarea
+            )
+            .then((res) => {
+              if (res.status == 200 && res.statusText == "OK") {
+                alert(res.data.msg);
+              }
+            });
+        } else {
+          return false;
+        }
+      });
     },
     getScroll() {
       // 回到顶部按钮是否显示
@@ -327,6 +347,8 @@ export default {
       // 侧边栏点击隐藏
       this.$refs.sidebar.style.right = "-100px";
       this.showFlag = true;
+      this.phoneFlag = false;
+      this.formFlag = false;
     },
   },
 };

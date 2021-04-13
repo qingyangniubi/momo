@@ -103,8 +103,7 @@
     </div>
   </div>
 </template>
-<style scoped>
-@import "~@/assets/css/evening.css";
+<style scoped src="@/assets/css/evening.css">
 </style>
 <script>
 import axios from "axios";

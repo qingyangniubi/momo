@@ -29,12 +29,12 @@
     <!-- 环境展示 start -->
     <div class="w1200">
       <div class="j-atmosphere">
-        <a href="">首页</a>
+        <a href="javascript:;">首页</a>
         <span>&gt;&gt;</span>
         <em>环境展示</em>
       </div>
       <div class="j-night">
-        <a href="">夜场环境</a>
+        <a href="javascript:;">夜场环境</a>
       </div>
       <div class="j-private">
         <ul class="clearfix">
@@ -42,11 +42,11 @@
             <img src="@/assets/img/image_12.jpeg" alt="" />
             <span>长沙夜总会</span>
           </li>
-          <li  @click="onClickList">
+          <li @click="onClickList">
             <img src="@/assets/img/image_7.jpeg" alt="" />
             <span>长沙市场</span>
           </li>
-          <li  @click="onClickList">
+          <li @click="onClickList">
             <img src="@/assets/img/image_13.jpeg" alt="" />
             <span>长沙酒吧</span>
           </li>
@@ -74,20 +74,17 @@
 
 <script>
 export default {
-    data(){
-      return{
-
-      }
+  data() {
+    return {};
+  },
+  methods: {
+    onClickList() {
+      this.$router.push("ktvenvironmentShowList");
     },
-    methods:{
-      onClickList(){
-        this.$router.push("ktvenvironmentShowList");
-      }
-    }
-}
+  },
+};
 </script>
 
 
-<style scoped>
-@import "~@/assets/css/environment_show.css";
+<style scoped src="@/assets/css/environment_show.css">
 </style>

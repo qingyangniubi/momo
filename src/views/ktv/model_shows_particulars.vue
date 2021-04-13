@@ -1,6 +1,6 @@
 <template>
   <div style="background-color='#fff">
-     <!-- 轮播图 -->
+    <!-- 轮播图 -->
     <!-- banner start -->
     <div class="j-banner">
       <div class="j-banner-image">
@@ -28,10 +28,10 @@
     <el-breadcrumb separator-class="el-icon-d-arrow-right">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/model_shows' }">
-        <a >模特展示</a>
+        <a>模特展示</a>
       </el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/model_shows' }">
-        <a >高端模特</a>
+        <a>高端模特</a>
       </el-breadcrumb-item>
       <el-breadcrumb-item>
         <a href="#">长沙夜总会模特</a>
@@ -89,7 +89,10 @@
             <div class="glass-right">
               <div class="showImg-box" v-show="isShow">
                 <div class="showImg" ref="showImg">
-                  <img :src="$store.state.imagePath + modelDataList.image" alt />
+                  <img
+                    :src="$store.state.imagePath + modelDataList.image"
+                    alt
+                  />
                 </div>
               </div>
               <div class="glass-right-text">{{ modelDataList.title }}</div>
@@ -116,7 +119,10 @@
             <div class="relatedProducts-bom">
               <!-- 轮播图 -->
               <el-carousel :interval="4000" type="card" height="250px">
-                <el-carousel-item v-for="(item, index) in productListData" :key="item.id">
+                <el-carousel-item
+                  v-for="(item, index) in productListData"
+                  :key="item.id"
+                >
                   <a href="#">
                     <div class="lbt-box" @click="onClickdata(item, index)">
                       <div class="lbt-box-img">
@@ -234,88 +240,99 @@ export default {
 li {
   list-style: none;
 }
+
 /* banner start */
 
 .j-banner {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .j-banner-image {
-    width: 100%;
-    height: 600px;
-    background: url("../../assets/img/image-10.jpg") no-repeat;
-    background-size: 100%;
+  width: 100%;
+  height: 600px;
+  background-size: 100%;
+}
+
+.j-b-i {
+  width: 100%;
+  height: 100%;
 }
 
 .j-product {
-    position: absolute;
-    width: 803px;
-    background-color: rgba(102, 0, 0, .7);
-    top: 130px;
-    left: 552px;
+  position: absolute;
+  width: 803px;
+  background-color: rgba(102, 0, 0, 0.7);
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .j-product h3 {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    line-height: 35px;
-    padding: 42px 0 24px 0;
-    font-size: 22px;
-    font-weight: 700;
-    font-family: "幼圆";
-    z-index: 7;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 35px;
+  padding: 42px 0 24px 0;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "幼圆";
+  z-index: 7;
 }
 
 .j-product p {
-    text-align: center;
-    color: #FBF900;
-    padding-bottom: 29px;
-    font-size: 20px;
-    font-family: "幼圆";
-    font-weight: 400;
+  text-align: center;
+  color: #fbf900;
+  padding-bottom: 29px;
+  font-size: 20px;
+  font-family: "幼圆";
+  font-weight: 400;
 }
 
 .j-code {
-    position: absolute;
-    top: 353px;
-    left: 46.5%;
+  position: absolute;
+  top: 353px;
+  left: 46.5%;
 }
 
 .j-relation {
-    position: absolute;
-    top: 499px;
-    left: 46.5%;
-    width: 135px;
-    height: 45px;
-    background-color: #D9534F;
+  position: absolute;
+  top: 499px;
+  left: 46.5%;
+  width: 135px;
+  height: 45px;
+  background-color: #d9534f;
 }
 
 .j-relation span {
-    line-height: 45px;
-    text-align: center;
-    color: #fff;
-    font-size: 16px;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.j-relation:hover {
+  background-color: #c9302c;
 }
 
 .j-cur span {
-    position: absolute;
-    bottom: 15px;
-    left: 49.5%;
-    display: block;
-    width: 17px;
-    height: 17px;
-    border: 1px solid #fff;
-    border-radius: 50%;
+  position: absolute;
+  bottom: 15px;
+  left: 49.5%;
+  display: block;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #fff;
+  border-radius: 50%;
 }
 
 .j-span {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-
 /* banner end */
+
 .el-breadcrumb {
   margin: 0 auto;
   width: 1200px;
@@ -356,7 +373,7 @@ li {
   // margin-top: 17px;
   padding: 0 10px;
   box-sizing: border-box;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
 }
 .uls-select .uls-one {
   margin-top: 28px;
@@ -413,7 +430,7 @@ li {
 
 .main-left {
   position: relative;
-  border: 1px solid  #CCCCCC;
+  border: 1px solid #cccccc;
   margin-bottom: 10px;
 }
 

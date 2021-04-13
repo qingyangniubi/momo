@@ -11,7 +11,6 @@ body {
 
 img {
     vertical-align: middle;
-    cursor: pointer;
 }
 
 .clearfix:after {
@@ -120,7 +119,6 @@ li {
     text-align: center;
     color: #fff;
     font-size: 16px;
-    cursor: pointer;
 }
 
 .j-relation:hover {
@@ -138,9 +136,6 @@ li {
     border-radius: 50%;
 }
 
-.j-span {
-    cursor: pointer;
-}
 
 
 /* banner end */
@@ -485,7 +480,7 @@ li {
 }
 
 .j-right {
-    width: 624px;
+    width: 650px;
     display: flex;
     flex-direction: column;
 }
@@ -533,6 +528,7 @@ li {
 
 .j-model {
     margin-left: 40px;
+    margin-right: 15px;
     width: 349px;
 }
 
